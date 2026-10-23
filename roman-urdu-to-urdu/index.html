@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ur-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roman Urdu to Urdu Converter Online – AshiKit</title>
+  <meta name="description" content="Roman Urdu ko authentic Nastaliq Urdu mein badlein. Google Smart Mode aur offline dictionary ke sath free online converter.">
+  <link rel="canonical" href="https://YOUR_DOMAIN.pages.dev/roman-urdu-to-urdu/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Roman Urdu to Urdu Converter Online – AshiKit">
+  <meta property="og:description" content="Roman Urdu likho, Nastaliq Urdu foran pao. Free aur fast converter.">
+  <meta property="og:url" content="https://YOUR_DOMAIN.pages.dev/roman-urdu-to-urdu/">
+  <meta property="og:site_name" content="AshiKit">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Roman Urdu to Urdu Converter Online – AshiKit">
+  <meta name="twitter:description" content="Roman English letters ko Urdu rasm-ul-khat mein tabdeel karein.">
+
+  <!-- JSON-LD WebApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "AshiKit Roman Urdu to Urdu Converter",
+        "url": "https://YOUR_DOMAIN.pages.dev/roman-urdu-to-urdu/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "description": "Convert Roman Urdu phonetics into Nastaliq Urdu script with Google Input Tools transliteration and offline dictionary fallback.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PKR" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Kya Roman Urdu converter offline bhi kaam karta hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Jee haan, agar internet na ho to hamari internal offline dictionary aur phonetic rules foran backup ke tor par Urdu banate hain." }
+          },
+          {
+            "@type": "Question",
+            "name": "Google Smart Mode aur Offline Mode mein kya farq hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Google Input Tools smart mode contextual Urdu alfaz chunta hai, jabke offline mode internal rules ke tehat seedha tabadla karta hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kya main lambi tehreer ya paragraphs convert kar sakta hoon?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Bilkul, aap hazaron alfaz par mushtamil mazameen ya WhatsApp messages asani se convert kar sakte hain." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kya ye converter mobile phones par theek chalta hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Jee haan, AshiKit mobile-first design par mabni hai aur Android ya iPhone ke kisi bhi browser par tezi se chalta hai." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="main-content">
+    <div class="wrap">
+      
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Roman Urdu Converter</span>
+      </nav>
+
+      <div class="page-intro">
+        <h1 class="page-title">Roman Urdu to Urdu Converter</h1>
+        <p class="page-sub">
+          Roman Urdu likho, Urdu foran milay. Free hai, login nahi chahiye. <span id="mode" style="font-weight: 700; color: var(--accent);"></span>
+        </p>
+      </div>
+
+      <div class="roman-guide-box">
+        <b>💡 Aasan Hidayat:</b> Roman English letters mein likhein jaisa aap WhatsApp par type karte hain (jaise: <i>"mera naam Ali hai aur main Karachi mein rehta hoon"</i>). 
+        Aap ka likha hua matan foran Nastaliq Urdu rasm-ul-khat mein badal jaye ga. Google Smart Mode behtareen alfaz chunta hai, aur internet na hone par hamari offline dictionary foran backup faraham karti hai.
+      </div>
+
+      <!-- Tool Interface -->
+      <div class="box">
+        <div class="grid-2">
+          <div>
+            <label for="inp">
+              <span>Roman Urdu Matan</span>
+              <span class="label-hint">English typing</span>
+            </label>
+            <textarea id="inp" class="editor" placeholder="yahan roman urdu likhein..." spellcheck="false"></textarea>
+          </div>
+          <div>
+            <label>
+              <span>Urdu Rasm-ul-Khat</span>
+              <span class="label-hint">Nastaliq Font</span>
+            </label>
+            <div class="urdu-out" id="out" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <div style="margin-top: 14px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+          <span style="font-size: 13px; font-weight: 600; color: var(--muted);">Urdu Alamaat:</span>
+          <button type="button" class="btn btn-sm u-sym" data-sym="؟">؟</button>
+          <button type="button" class="btn btn-sm u-sym" data-sym="،">،</button>
+          <button type="button" class="btn btn-sm u-sym" data-sym="؛">؛</button>
+          <button type="button" class="btn btn-sm u-sym" data-sym="ء">ء</button>
+          <button type="button" class="btn btn-sm u-sym" data-sym="ؐ">ؐ</button>
+          <button type="button" class="btn btn-sm u-sym" data-sym="ؑ">ؑ</button>
+          <button type="button" class="btn btn-sm u-sym" data-sym="ؓ">ؓ</button>
+          <button type="button" class="btn btn-sm u-sym" data-sym="ؒ">ؒ</button>
+        </div>
+
+        <div class="button-bar">
+          <button type="button" class="btn btn-primary" id="copy">Urdu Copy Karein</button>
+          <button type="button" class="btn" id="sample">Misal Dekhein</button>
+          <button type="button" class="btn" id="clear">Saaf Karein</button>
+        </div>
+
+        <p class="note">
+          Spelling aap ki awaaz ke mutabiq likhein (jaise "kaise", "bohat", "shukriya"). Copy karne se pehle aik nazar dekh lein.
+        </p>
+      </div>
+
+      <!-- Ad Slot 1 (Below Tool) -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 1 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Under Tool)</span>
+      </div>
+
+      <!-- How to use -->
+      <section class="content-section">
+        <h2>Kaise Istemal Karein (How to Use)</h2>
+        <ol class="steps-list">
+          <li><b>Type Karein:</b> Left side wale box mein Roman Urdu mein jumlay likhein (jaise "Aap ka shukriya").</li>
+          <li><b>Foran Conversion:</b> Right side wale box mein foran Nastaliq Urdu tayyar ho jaye gi.</li>
+          <li><b>Alamaat Shamil Karein:</b> Agar sawaliya nishan (؟) ya comma (،) chahiye to quick button dabayein.</li>
+          <li><b>Copy Karein:</b> "Urdu Copy Karein" button par click karein aur WhatsApp, Facebook ya kisi bhi jagah paste karein.</li>
+        </ol>
+
+        <h2>Roman Urdu to Urdu Converter Ki Wazahat</h2>
+        <p>
+          Pakistan aur dunya bhar mein lakhoon log rozana mobile keyboard par English haroof ke zariye Urdu likhte hain, jise Roman Urdu kaha jata hai. Magar jab official dastawezat, social media posts, ya adabi tehreer tayyar karni ho to authentic Nastaliq Urdu rasm-ul-khat ki zaroorat hoti hai. Urdu keyboard se typing karna aksar mushkil aur waqt talab hota hai kyunke harf dhoondna asaan nahi hota.
+        </p>
+        <p>
+          AshiKit ka Roman Urdu to Urdu Converter is maslay ka mukammal aur nihayat tezi se kaam karne wala hal hai. Hamara tool do tarha se kaam karta hai: pehle ye Google Input Tools ke smart cloud transliteration engine se rabta karta hai jo jumlay ki munasibat se behtareen Urdu alfaz muntaqil karta hai. Agar aap ka internet slow ho ya band ho jaye, to hamara system foran built-in offline Urdu dictionary aur phonetic rules par switch ho jata hai. Is tarha aap ki typing mein kabhi rukawat nahi aati. Ye tool 100% free hai aur kisi qisam ka login darkar nahi.
+        </p>
+
+        <h2>Ahem Sawalat (FAQs)</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3 class="faq-q">Kya Roman Urdu converter offline bhi kaam karta hai?</h3>
+            <p class="faq-a">Jee haan, agar internet na ho to hamari internal offline dictionary aur phonetic rules foran backup ke tor par Urdu banate hain.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Google Smart Mode aur Offline Mode mein kya farq hai?</h3>
+            <p class="faq-a">Google Input Tools smart mode contextual Urdu alfaz chunta hai, jabke offline mode internal rules ke tehat seedha tabadla karta hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Kya main lambi tehreer ya paragraphs convert kar sakta hoon?</h3>
+            <p class="faq-a">Bilkul, aap hazaron alfaz par mushtamil mazameen ya WhatsApp messages asani se convert kar sakte hain.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Kya ye converter mobile phones par theek chalta hai?</h3>
+            <p class="faq-a">Jee haan, AshiKit mobile-first design par mabni hai aur Android ya iPhone ke kisi bhi browser par tezi se chalta hai.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Tools -->
+      <section class="related-tools">
+        <h2 style="font-size:22px; font-weight:800; color:var(--ink);">Doosray Mutalliqah Tools</h2>
+        <div class="related-grid">
+          <a href="/word-counter/" class="related-card"><span class="related-icon">📝</span> Word Counter</a>
+          <a href="/text-case-converter/" class="related-card"><span class="related-icon">🔠</span> Text Case Converter</a>
+          <a href="/number-to-urdu-words/" class="related-card"><span class="related-icon">🔢</span> Urdu Number Words</a>
+          <a href="/shayari-card-maker/" class="related-card"><span class="related-icon">🎨</span> Shayari Card Maker</a>
+        </div>
+      </section>
+
+      <!-- Ad Slot 2 (Bottom) -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 2 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Bottom)</span>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/assets/site.js"></script>
+  <script src="/assets/tools/converter.js"></script>
+</body>
+</html>

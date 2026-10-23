@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ur-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EMI Calculator Online – Car & Loan Installments – AshiKit</title>
+  <meta name="description" content="Mahana qist (EMI) ka hisab lagayein. Bank loan, car installment ya kisi bhi financing ke liye asaan aur muft calculator.">
+  <link rel="canonical" href="https://YOUR_DOMAIN.pages.dev/emi-calculator/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="EMI Calculator Online – AshiKit">
+  <meta property="og:description" content="Mahana qist aur kul sood/profit ka andaza lagayein. Gaari, bike aur bank loan ke liye behtareen.">
+  <meta property="og:url" content="https://YOUR_DOMAIN.pages.dev/emi-calculator/">
+  <meta property="og:site_name" content="AshiKit">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EMI Calculator Online – AshiKit">
+  <meta name="twitter:description" content="Mahana bank qist aur total markup ka foran hisab lagayein.">
+
+  <!-- JSON-LD WebApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "AshiKit EMI Calculator",
+        "url": "https://YOUR_DOMAIN.pages.dev/emi-calculator/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "description": "Calculate Equated Monthly Installments (EMI), total interest and repayment breakdown for car, personal, and home loans.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PKR" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "EMI ka kya matlab hota hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "EMI ka matlab Equated Monthly Installment hai yani wo aik jaisi mahana qist jo qarz ada karne ke liye har mahine di jati hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kya ye calculator Islamic banking par lagu hota hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Jee haan, Islamic car ya home financing mein jahan saalana profit rate tay hota hai, ye formula wahan bhi barabar kaam karta hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Muddat mahinon mein likhna zaroori hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Jee haan, agar 1 saal ka loan hai to 12 mahine, aur agar 3 saal hain to 36 mahine likhein." }
+          },
+          {
+            "@type": "Question",
+            "name": "Extra amount ka kya matlab hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Extra amount asal qarz (principal) ke upar bank ka kul markup ya sood hota hai jo poori muddat mein ada hota hai." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="main-content">
+    <div class="wrap">
+      
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>EMI Calculator</span>
+      </nav>
+
+      <div class="page-intro">
+        <h1 class="page-title">EMI & Installment Calculator</h1>
+        <p class="page-sub">
+          Qist ka andaza lagayein. Gaari, bike, personal loan ya home financing ki mahana qist aur kul markup maloom karein.
+        </p>
+      </div>
+
+      <div class="roman-guide-box">
+        <b>📊 EMI Kaise Kaam Karta Hai?</b> 
+        EMI ka matlab hai <i>Equated Monthly Installment</i> (har mahine ada ki jane wali mustaqil raqam). 
+        Aap ne jitna loan liya hai (Principal Raqam), bank ka saalana markup rate (jaise 14% ya 18%), aur kitne mahinon mein wapis karna hai (Muddat) darj karein. 
+        Calculator foran aap ko <b>Mahana Qist</b>, <b>Kul Adaigi</b> aur <b>Extra Raqam (Profit/Markup)</b> hisab kar ke bataye ga.
+      </div>
+
+      <!-- Tool Interface -->
+      <div class="box" style="max-width: 680px; margin: 0 auto;">
+        <label for="e1">
+          <span>Loan Raqam (Rupay)</span>
+          <span class="label-hint">Asal qarz / Principal</span>
+        </label>
+        <input type="number" id="e1" placeholder="e.g. 500000" min="0">
+
+        <label for="e2">
+          <span>Saalana Profit / Interest Rate (%)</span>
+          <span class="label-hint">Per annum rate</span>
+        </label>
+        <input type="number" id="e2" placeholder="e.g. 15" min="0" step="0.1">
+
+        <label for="e3">
+          <span>Muddat (Mahinon Mein)</span>
+          <span class="label-hint">Total months</span>
+        </label>
+        <input type="number" id="e3" placeholder="e.g. 36" min="1">
+
+        <div style="display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap;">
+          <span style="font-size: 13px; color: var(--muted); align-self: center;">Aam Muddat:</span>
+          <button type="button" class="btn btn-sm e-tenure" data-m="12">1 Saal (12 M)</button>
+          <button type="button" class="btn btn-sm e-tenure" data-m="24">2 Saal (24 M)</button>
+          <button type="button" class="btn btn-sm e-tenure" data-m="36">3 Saal (36 M)</button>
+          <button type="button" class="btn btn-sm e-tenure" data-m="60">5 Saal (60 M)</button>
+        </div>
+
+        <div class="button-bar">
+          <button type="button" class="btn btn-primary" id="ego" style="flex: 1;">Hisab Lagayein</button>
+          <button type="button" class="btn" id="ereset">Clear</button>
+        </div>
+
+        <div class="res-box" id="eres"></div>
+
+        <p class="note">
+          Formula: EMI = [P x R x (1+R)^N] / [(1+R)^N - 1]. Bank processing fees ya insurance is mein shamil nahi hain.
+        </p>
+      </div>
+
+      <!-- Ad Slot 1 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 1 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Under Tool)</span>
+      </div>
+
+      <!-- Explanation & FAQs -->
+      <section class="content-section">
+        <h2>Kaise Istemal Karein (How to Use)</h2>
+        <ol class="steps-list">
+          <li><b>Qarz Ki Raqam Likhein:</b> Jitni raqam aap financing par le rahe hain wo pehle box mein likhein.</li>
+          <li><b>Markup Rate Likhein:</b> Bank ka saalana interest ya profit rate darj karein (jaise 15%).</li>
+          <li><b>Mahinon Ki Tadaad:</b> Jitne mahinon mein loan wapis karna hai wo muddat chunein (jaise 36 mahine).</li>
+          <li><b>Nateeja Dekhein:</b> "Hisab Lagayein" dabane par foran mahana qist aur kul munafa zahir hoga.</li>
+        </ol>
+
+        <h2>EMI Calculator Ki Mukammal Wazahat</h2>
+        <p>
+          Jab bhi koi shakhs gaari, bike, ghar ya karobar ke liye kisi bank ya leasing company se qarz leta hai to sab se pehla sawal ye hota hai ke har mahine kitni qist ada karni hogi aur kul kitna izafi paisa (profit ya interest) dena padega. Aam tor par log andaza lagane mein ghalti kar bethte hain kyunke compound interest ka hisab saadha nahi hota.
+        </p>
+        <p>
+          AshiKit ka EMI Calculator bilkul standard financial formula par kaam karta hai jo commercial banks aur microfinance idaray istemal karte hain. Ye tool aap ko mahana qist ki precise raqam batata hai taake aap apne gharelu budget ka andaza ba-aasani laga sakein. Sath hi ye kul adaigi aur asal raqam ke darmiyan ka farq wazeh karta hai jis se aap ko pata chalta hai ke loan par kitna extra kharch ho raha hai.
+        </p>
+
+        <h2>Ahem Sawalat (FAQs)</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3 class="faq-q">EMI ka kya matlab hota hai?</h3>
+            <p class="faq-a">EMI ka matlab Equated Monthly Installment hai yani wo aik jaisi mahana qist jo qarz ada karne ke liye har mahine di jati hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Kya ye calculator Islamic banking par lagu hota hai?</h3>
+            <p class="faq-a">Jee haan, Islamic car ya home financing mein jahan saalana profit rate tay hota hai, ye formula wahan bhi barabar kaam karta hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Muddat mahinon mein likhna zaroori hai?</h3>
+            <p class="faq-a">Jee haan, agar 1 saal ka loan hai to 12 mahine, aur agar 3 saal hain to 36 mahine likhein.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Extra amount ka kya matlab hai?</h3>
+            <p class="faq-a">Extra amount asal qarz (principal) ke upar bank ka kul markup ya sood hota hai jo poori muddat mein ada hota hai.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Tools -->
+      <section class="related-tools">
+        <h2 style="font-size:22px; font-weight:800; color:var(--ink);">Doosray Mutalliqah Tools</h2>
+        <div class="related-grid">
+          <a href="/zakat-calculator/" class="related-card"><span class="related-icon">🌙</span> Zakat Calculator</a>
+          <a href="/number-to-urdu-words/" class="related-card"><span class="related-icon">🔢</span> Urdu Number Words</a>
+          <a href="/age-calculator/" class="related-card"><span class="related-icon">🎂</span> Age Calculator</a>
+          <a href="/word-counter/" class="related-card"><span class="related-icon">📝</span> Word Counter</a>
+        </div>
+      </section>
+
+      <!-- Ad Slot 2 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 2 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Bottom)</span>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/assets/site.js"></script>
+  <script src="/assets/tools/emi.js"></script>
+</body>
+</html>

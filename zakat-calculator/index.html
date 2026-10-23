@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ur-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zakat Calculator Online – AshiKit Free Urdu Tools</title>
+  <meta name="description" content="Pakistan mein Zakat ka hisab lagayein. Cash, sona, chandi, maal-e-tijarat aur qarz daal kar 2.5% hisab maloom karein.">
+  <link rel="canonical" href="https://YOUR_DOMAIN.pages.dev/zakat-calculator/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Zakat Calculator Online – AshiKit">
+  <meta property="og:description" content="Apni dolat par 2.5% zakat ka shar'i hisab lagayein. Cash, sona, chandi aur nisab.">
+  <meta property="og:url" content="https://YOUR_DOMAIN.pages.dev/zakat-calculator/">
+  <meta property="og:site_name" content="AshiKit">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zakat Calculator Online – AshiKit">
+  <meta name="twitter:description" content="Cash, gold, silver aur investments par Zakat ka sahi hisab karein.">
+
+  <!-- JSON-LD WebApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "AshiKit Zakat Calculator",
+        "url": "https://YOUR_DOMAIN.pages.dev/zakat-calculator/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "All",
+        "description": "Calculate Islamic Zakat at 2.5% based on cash, gold, silver, merchandise and deductible liabilities against Nisab.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PKR" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Zakat kin cheezon par farz hoti hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Cash, bank balance, sona, chandi, business stock aur shares/investments par zakat wajib hoti hai. Zati makaan aur gaari par zakat nahi hoti." }
+          },
+          {
+            "@type": "Question",
+            "name": "Chandi ka Nisab kitna hota hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Chandi ka nisab 612.36 gram ya 52.5 tola chandi ki maujooda market qeemat hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Zakat ki sharah (rate) kya hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Shar'i tor par zakat net qabil-e-zakat dolat ka 2.5% yani 40wan hissa hoti hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kya qarz minus kiya jata hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Jee haan, wo qarz jo aap ko foran ada karna hai, use kul dolat se manfi (subtract) kar ke net dolat nikali jati hai." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="main-content">
+    <div class="wrap">
+      
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Zakat Calculator</span>
+      </nav>
+
+      <div class="page-intro">
+        <h1 class="page-title">Zakat Calculator</h1>
+        <p class="page-sub">
+          Apni dolat likhein (rupay mein). Zakat 2.5% hoti hai aur shar'i nisab ke mutabiq hisab ki jati hai.
+        </p>
+      </div>
+
+      <div class="roman-guide-box">
+        <b>🌙 Zakat Ka Asaan Tareeqa:</b> 
+        Tamam qabil-e-zakat asason (Bank cash, Sona, Chandi aur Karobar ka maal) ko jama karein aur is mein se wo qarz nikal dein jo aap par foran wajib-ul-ada hai. 
+        Agar bachi hui net dolat <b>Nisab (612.36 gram ya 52.5 tola chandi ki qeemat)</b> se zyada ho to is net raqam ka <b>2.5% (40wan hissa)</b> zakat ada karna farz hota hai.
+      </div>
+
+      <!-- Tool Interface -->
+      <div class="box" style="max-width: 720px; margin: 0 auto;">
+        <label for="z1">
+          <span>1. Cash / Bank Balance</span>
+          <span class="label-hint">Ghar aur bank mein maujood raqam</span>
+        </label>
+        <input type="number" id="z1" placeholder="Rs 0" min="0">
+
+        <label for="z2">
+          <span>2. Sona (Maujooda Market Qeemat)</span>
+          <span class="label-hint">Gold ornaments ya bars ki qeemat</span>
+        </label>
+        <input type="number" id="z2" placeholder="Rs 0" min="0">
+
+        <label for="z3">
+          <span>3. Chandi (Maujooda Market Qeemat)</span>
+          <span class="label-hint">Silver zewarat ya items</span>
+        </label>
+        <input type="number" id="z3" placeholder="Rs 0" min="0">
+
+        <label for="z4">
+          <span>4. Business Ka Maal / Investment</span>
+          <span class="label-hint">Tijarat ka stock, mutual funds, shares</span>
+        </label>
+        <input type="number" id="z4" placeholder="Rs 0" min="0">
+
+        <label for="z5">
+          <span>5. Qarz Jo Aap Ko Dena Hai (-)</span>
+          <span class="label-hint">Minus hoga net dolat se</span>
+        </label>
+        <input type="number" id="z5" placeholder="Rs 0" min="0">
+
+        <label for="z6">
+          <span>6. Nisab (612.36 Gram Chandi Ki Qeemat)</span>
+          <span class="label-hint">Shar'i threshold</span>
+        </label>
+        <div style="display: flex; gap: 8px;">
+          <input type="number" id="z6" placeholder="Rs 150000" min="0">
+          <button type="button" class="btn btn-sm" id="zpreset">Set Nisab</button>
+        </div>
+
+        <div class="button-bar">
+          <button type="button" class="btn btn-primary" id="zgo" style="flex: 1;">Hisab Lagayein</button>
+          <button type="button" class="btn" id="zreset">Clear</button>
+        </div>
+
+        <div class="res-box" id="zres"></div>
+
+        <p class="note">
+          ⚠️ Chandi ki qeemat rozana market mein badalti hai, isliye taaza rate dekh kar Nisab likhein. Ahem masail mein kisi aalim se mashwara karein.
+        </p>
+      </div>
+
+      <!-- Ad Slot 1 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 1 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Under Tool)</span>
+      </div>
+
+      <!-- Explanation & FAQs -->
+      <section class="content-section">
+        <h2>Kaise Istemal Karein (How to Use)</h2>
+        <ol class="steps-list">
+          <li><b>Cash & Asasay Darj Karein:</b> Apne bank balance, zati gold, silver aur karobari maal ki raqam likhein.</li>
+          <li><b>Qarz Manfi Karein:</b> Agar aap ne kisi ko raqam wapis karni hai to use qarz ke box mein likhein.</li>
+          <li><b>Nisab Set Karein:</b> 52.5 tola chandi ki maujooda qeemat likhein ya "Set Nisab" button dabayein.</li>
+          <li><b>Hisab Lagayein:</b> "Hisab Lagayein" par click kar ke foran apni wajib-ul-ada zakat maloom karein.</li>
+        </ol>
+
+        <h2>Zakat Calculator Ki Tafseel</h2>
+        <p>
+          Islam mein Zakat deen ke bunyadi arkaan mein se aik ahem rukan hai jo har sahib-e-nisab musalman par farz hai. Zakat ka asal maqsad muashray mein daulat ki munsifana taqseem aur ghareeb o mustahiq afraad ki kaffalat karna hai. Zakat ka hisab lagana aam tor par aam logon ke liye thora uljhan ka ba'is hota hai kyunke mukhtalif qism ke asasay jaise ke tijarti maal, sona aur bank ki saving shamil hoti hain.
+        </p>
+        <p>
+          AshiKit Zakat Calculator is baat ko yaqeeni banata hai ke aap ka hisab mukammal tor par shar'i usoolon ke mutabiq aur nihayat aasan tareeqay se mukammal ho. Ye tool aap ke tamam asason ko jama kar ke wajib-ul-ada qarzon ko nikalta hai aur phir chandi ke nisab se mawazna karta hai. Agar aap ki net dolat nisab se barh jaye to sirf 2.5% hisab kar ke saaf wazeh lafzon mein batata hai. Ye tool bilkul private hai aur aap ki maali maloomat kisi ke sath share nahi hoti.
+        </p>
+
+        <h2>Zakat Ke Mutalliq Ahem Sawalat (FAQs)</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3 class="faq-q">Zakat kin cheezon par farz hoti hai?</h3>
+            <p class="faq-a">Cash, bank balance, sona, chandi, business stock aur shares/investments par zakat wajib hoti hai. Zati makaan aur gaari par zakat nahi hoti.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Chandi ka Nisab kitna hota hai?</h3>
+            <p class="faq-a">Chandi ka nisab 612.36 gram ya 52.5 tola chandi ki maujooda market qeemat hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Zakat ki sharah (rate) kya hai?</h3>
+            <p class="faq-a">Shar'i tor par zakat net qabil-e-zakat dolat ka 2.5% yani 40wan hissa hoti hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Kya qarz minus kiya jata hai?</h3>
+            <p class="faq-a">Jee haan, wo qarz jo aap ko foran ada karna hai, use kul dolat se manfi (subtract) kar ke net dolat nikali jati hai.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Tools -->
+      <section class="related-tools">
+        <h2 style="font-size:22px; font-weight:800; color:var(--ink);">Doosray Mutalliqah Tools</h2>
+        <div class="related-grid">
+          <a href="/emi-calculator/" class="related-card"><span class="related-icon">📊</span> EMI Calculator</a>
+          <a href="/number-to-urdu-words/" class="related-card"><span class="related-icon">🔢</span> Urdu Number Words</a>
+          <a href="/age-calculator/" class="related-card"><span class="related-icon">🎂</span> Age Calculator</a>
+          <a href="/roman-urdu-to-urdu/" class="related-card"><span class="related-icon">✍️</span> Urdu Converter</a>
+        </div>
+      </section>
+
+      <!-- Ad Slot 2 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 2 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Bottom)</span>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/assets/site.js"></script>
+  <script src="/assets/tools/zakat.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ur-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Text Case Converter Online – UPPER, lower, Title – AshiKit</title>
+  <meta name="description" content="Free text case converter online. UPPERCASE, lowercase, Title Case, Sentence case, camelCase aur kebab-case mein aik click mein badlein.">
+  <link rel="canonical" href="https://YOUR_DOMAIN.pages.dev/text-case-converter/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Text Case Converter Online – AshiKit">
+  <meta property="og:description" content="Text ko UPPERCASE, lowercase, Title Case aur Sentence case mein tabdeel karein.">
+  <meta property="og:url" content="https://YOUR_DOMAIN.pages.dev/text-case-converter/">
+  <meta property="og:site_name" content="AshiKit">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Text Case Converter – AshiKit">
+  <meta name="twitter:description" content="English text ke cases ko aik click mein badlein.">
+
+  <!-- JSON-LD WebApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "AshiKit Text Case Converter",
+        "url": "https://YOUR_DOMAIN.pages.dev/text-case-converter/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "description": "Convert text into UPPERCASE, lowercase, Title Case, Sentence case, camelCase, snake_case, and alternating case formats.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PKR" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Title Case aur Sentence case mein kya farq hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Title Case mein har lafz ka pehla harf bada hota hai, jabke Sentence case mein sirf jumlay ka pehla harf bada hota hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "camelCase aur snake_case kis liye istemal hote hain?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ye programming aur coding mein variables, file names aur database columns ke liye istemal hote hain." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kya Caps Lock ghalti se on hone par text theek ho sakta hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Jee haan, agar sara text CAPITAL mein likh gaya ho to 'Sentence case' dabane se wo normal jumlon mein theek ho jata hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kya lambi paragraphs par kaam karta hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Jee haan, aap lakhoon haroof par mushtamil kitabein ya articles foran transform kar sakte hain." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="main-content">
+    <div class="wrap">
+      
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Text Case Converter</span>
+      </nav>
+
+      <div class="page-intro">
+        <h1 class="page-title">Text Case Converter</h1>
+        <p class="page-sub">
+          Text ko aik click mein Bada (UPPERCASE), Chota (lowercase), Title Case ya Sentence case mein tabdeel karein.
+        </p>
+      </div>
+
+      <div class="roman-guide-box">
+        <b>🔠 Text Case Kaise Badlein?</b> 
+        Box mein apna text paste karein ya type karein. Phir niche diye gaye buttons (jaise <b>UPPERCASE</b>, <b>Title Case</b>, <b>Sentence case</b>) par click karein. Aap ka sara text foran us style mein convert ho jaye ga!
+      </div>
+
+      <!-- Tool Interface -->
+      <div class="box">
+        <label for="tc-text">
+          <span>Yahan Text Likhein Ya Paste Karein</span>
+          <span class="label-hint">English ya Roman text</span>
+        </label>
+        <textarea id="tc-text" class="editor" placeholder="yahan text paste karein..."></textarea>
+
+        <!-- Case Action Buttons -->
+        <div style="display:flex; gap:8px; margin-top:14px; flex-wrap:wrap;">
+          <button type="button" class="btn btn-case" data-case="sentence">Sentence case</button>
+          <button type="button" class="btn btn-case" data-case="lower">lowercase</button>
+          <button type="button" class="btn btn-case" data-case="upper">UPPERCASE</button>
+          <button type="button" class="btn btn-case" data-case="title">Title Case</button>
+          <button type="button" class="btn btn-case" data-case="camel">camelCase</button>
+          <button type="button" class="btn btn-case" data-case="snake">snake_case</button>
+          <button type="button" class="btn btn-case" data-case="kebab">kebab-case</button>
+          <button type="button" class="btn btn-case" data-case="alternating">aLtErNaTiNg</button>
+        </div>
+
+        <div class="button-bar">
+          <button type="button" class="btn btn-primary" id="tc-copy">Text Copy Karein</button>
+          <button type="button" class="btn" id="tc-sample">Misal Dekhein</button>
+          <button type="button" class="btn" id="tc-clear">Saaf Karein</button>
+        </div>
+      </div>
+
+      <!-- Ad Slot 1 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 1 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Under Tool)</span>
+      </div>
+
+      <!-- Explanation & FAQs -->
+      <section class="content-section">
+        <h2>Kaise Istemal Karein (How to Use)</h2>
+        <ol class="steps-list">
+          <li><b>Text Paste Karein:</b> Box mein wo tehreer daalein jis ka case badalna chahte hain.</li>
+          <li><b>Style Button Dabayein:</b> Jo format chahiye (UPPERCASE, lowercase, Title Case) us button par click karein.</li>
+          <li><b>Review Karein:</b> Dekhein ke text foran matlooba shakal mein tabdeel ho chuka hai.</li>
+          <li><b>Copy Karein:</b> "Text Copy Karein" button daba kar MS Word, WhatsApp ya coding editor mein paste karein.</li>
+        </ol>
+
+        <h2>Text Case Converter Ki Mukammal Wazahat</h2>
+        <p>
+          Computer par typing karte waqt aksar aisi ghaltiyan ho jati hain jahan ghalti se Caps Lock on reh jata hai aur poora paragraph bare haroof (ALL CAPS) mein type ho jata hai. Aise text ko dobara mitana aur shuru se type karna waqt ka bara ziya hota hai. Isi tarha headings banate waqt har lafz ka pehla harf bada karne ke liye (Title Case) manual typing kafi thaka dene wali hoti hai.
+        </p>
+        <p>
+          AshiKit Text Case Converter aik second mein tamam text formats ko convert kar deta hai. Chahay aap ko email ki formatting theek karni ho, blog post ki heading banani ho, ya software development ke liye variables (camelCase ya snake_case) generate karne hon, ye tool aap ke liye behtareen saathi sabit hota hai. Sab calculations client-side browser mein hoti hain aur koi limit nahi hai.
+        </p>
+
+        <h2>Ahem Sawalat (FAQs)</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3 class="faq-q">Title Case aur Sentence case mein kya farq hai?</h3>
+            <p class="faq-a">Title Case mein har lafz ka pehla harf bada hota hai, jabke Sentence case mein sirf jumlay ka pehla harf bada hota hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">camelCase aur snake_case kis liye istemal hote hain?</h3>
+            <p class="faq-a">Ye programming aur coding mein variables, file names aur database columns ke liye istemal hote hain.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Kya Caps Lock ghalti se on hone par text theek ho sakta hai?</h3>
+            <p class="faq-a">Jee haan, agar sara text CAPITAL mein likh gaya ho to 'Sentence case' dabane se wo normal jumlon mein theek ho jata hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Kya lambi paragraphs par kaam karta hai?</h3>
+            <p class="faq-a">Jee haan, aap lakhoon haroof par mushtamil kitabein ya articles foran transform kar sakte hain.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Tools -->
+      <section class="related-tools">
+        <h2 style="font-size:22px; font-weight:800; color:var(--ink);">Doosray Mutalliqah Tools</h2>
+        <div class="related-grid">
+          <a href="/word-counter/" class="related-card"><span class="related-icon">📝</span> Word Counter</a>
+          <a href="/stylish-name-generator/" class="related-card"><span class="related-icon">✨</span> Stylish Names</a>
+          <a href="/roman-urdu-to-urdu/" class="related-card"><span class="related-icon">✍️</span> Urdu Converter</a>
+          <a href="/number-to-urdu-words/" class="related-card"><span class="related-icon">🔢</span> Urdu Number Words</a>
+        </div>
+      </section>
+
+      <!-- Ad Slot 2 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 2 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Bottom)</span>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/assets/site.js"></script>
+  <script src="/assets/tools/case.js"></script>
+</body>
+</html>

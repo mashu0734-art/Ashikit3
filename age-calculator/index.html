@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ur-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Age Calculator Online – Apni Umar Maloom Karein – AshiKit</title>
+  <meta name="description" content="Free online age calculator. Apni tareekh-e-paidaish (DOB) daal kar exact saal, mahine, din, kul ghante aur agli saalgirah ka countdown janiye.">
+  <link rel="canonical" href="https://YOUR_DOMAIN.pages.dev/age-calculator/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Age Calculator Online – AshiKit">
+  <meta property="og:description" content="Apni exact umar aur aglay birthday ka countdown secondon mein maloom karein.">
+  <meta property="og:url" content="https://YOUR_DOMAIN.pages.dev/age-calculator/">
+  <meta property="og:site_name" content="AshiKit">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Age Calculator Online – AshiKit">
+  <meta name="twitter:description" content="Date of Birth se exact umar aur days ka hisab lagayein.">
+
+  <!-- JSON-LD WebApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "AshiKit Age Calculator",
+        "url": "https://YOUR_DOMAIN.pages.dev/age-calculator/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "description": "Calculate exact chronological age in years, months, and days with next birthday countdown and astrological zodiac signs.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PKR" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Age calculate karne ka sahi tareeqa kya hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Apni date of birth (paidaish ki tareekh, mahina aur saal) select karein aur Hisab Lagayein button dabayein." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kya ye tool leap year (leap saal) ko count karta hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Jee haan, calendar ke tamam 365 aur 366 dino ka leap year ke mutabiq 100% accurate hisab hota hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Agli saalgirah ka pata kaise chalta hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Calculator aaj ki tareekh aur aap ki paidaish ki tareekh ka mawazna kar ke baaqi din aur din ka naam batata hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kya kisi makhsoos maazi ki tareekh par bhi umar nikaali ja sakti hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Jee haan, 'Kis Tareekh Tak' wale box mein koi bhi maazi ya mustaqbil ki tareekh set ki ja sakti hai." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="main-content">
+    <div class="wrap">
+      
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Age Calculator</span>
+      </nav>
+
+      <div class="page-intro">
+        <h1 class="page-title">Age Calculator</h1>
+        <p class="page-sub">
+          Apni tareekh-e-paidaish darj karein aur exact saal, mahine, din, kul din aur agli saalgirah ka countdown janiye.
+        </p>
+      </div>
+
+      <div class="roman-guide-box">
+        <b>🎂 Umar Maloom Karne Ka Tareeqa:</b> 
+        Pehle box mein apni <b>Tareekh-e-Paidaish (Date of Birth)</b> chunein. Calculator foran aap ko bataye ga ke aap ki umar kitne saal, kitne mahine aur kitne din ho chuki hai, aur aap ne zameen par kitne hazaar din guzar liye hain!
+      </div>
+
+      <!-- Tool Interface -->
+      <div class="box" style="max-width: 640px; margin: 0 auto;">
+        <label for="dob">
+          <span>Aap Ki Tareekh-e-Paidaish (DOB)</span>
+          <span class="label-hint">Zaroori field</span>
+        </label>
+        <input type="date" id="dob" style="padding:12px; font-size:16px;">
+
+        <label for="asof">
+          <span>Kis Tareekh Tak Hisab Karna Hai?</span>
+          <span class="label-hint">Aam tor par aaj ki tareekh</span>
+        </label>
+        <input type="date" id="asof" style="padding:12px; font-size:16px;">
+
+        <div class="button-bar">
+          <button type="button" class="btn btn-primary" id="age-calc" style="flex: 1; padding: 12px;">Umar Maloom Karein 🎂</button>
+        </div>
+
+        <div class="res-box" id="age-res" style="background:var(--panel); border:none; padding:0; margin-top:20px;"></div>
+      </div>
+
+      <!-- Ad Slot 1 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 1 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Under Tool)</span>
+      </div>
+
+      <!-- Explanation & FAQs -->
+      <section class="content-section">
+        <h2>Kaise Istemal Karein (How to Use)</h2>
+        <ol class="steps-list">
+          <li><b>Date of Birth Select Karein:</b> Calendar se apna saal, mahina aur paidaish ka din muntakhib karein.</li>
+          <li><b>Reference Date Check Karein:</b> "Kis tareekh tak" mein aam tor par aaj ki tareekh khud ba khud aati hai.</li>
+          <li><b>Button Dabayein:</b> "Umar Maloom Karein" par click karein.</li>
+          <li><b>Detailed Stats Dekhein:</b> Saal, mahine, din, kul ghante, aglay birthday ka din aur apna astrological star dekhein.</li>
+        </ol>
+
+        <h2>Age Calculator Ki Mukammal Wazahat</h2>
+        <p>
+          Zindagi ke mukhtalif marahal mein humein apni exact umar ki zaroorat padti hai, maslan job application form bharte waqt jahan saal, mahine aur din alag alag likhne hote hain (e.g. 24 Saal, 3 Mahine, 12 Din). Isi tarha passport banwate waqt, driving license ya kisi sarkari imtehan (CSS, PMS, ISSB) ki age eligibility criteria check karne ke liye bhi exact calculation chahiye hoti hai.
+        </p>
+        <p>
+          AshiKit Age Calculator aap ko 100% calendar-accurate calculations muhayya karta hai jo leap years (366 din wale saal) aur har mahine ke 30/31 dino ka khayal rakhta hai. Mazeed ye ke ye tool aap ko dilchasp maloomat bhi deta hai jaise ke aap ne zameen par kitne ghante guzar liye hain aur aap ka Agla Birthday kis din aur kitne dino baad aane wala hai.
+        </p>
+
+        <h2>Ahem Sawalat (FAQs)</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3 class="faq-q">Age calculate karne ka sahi tareeqa kya hai?</h3>
+            <p class="faq-a">Apni date of birth (paidaish ki tareekh, mahina aur saal) select karein aur Hisab Lagayein button dabayein.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Kya ye tool leap year (leap saal) ko count karta hai?</h3>
+            <p class="faq-a">Jee haan, calendar ke tamam 365 aur 366 dino ka leap year ke mutabiq 100% accurate hisab hota hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Agli saalgirah ka pata kaise chalta hai?</h3>
+            <p class="faq-a">Calculator aaj ki tareekh aur aap ki paidaish ki tareekh ka mawazna kar ke baaqi din aur din ka naam batata hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Kya kisi makhsoos maazi ki tareekh par bhi umar nikaali ja sakti hai?</h3>
+            <p class="faq-a">Jee haan, 'Kis Tareekh Tak' wale box mein koi bhi maazi ya mustaqbil ki tareekh set ki ja sakti hai.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Tools -->
+      <section class="related-tools">
+        <h2 style="font-size:22px; font-weight:800; color:var(--ink);">Doosray Mutalliqah Tools</h2>
+        <div class="related-grid">
+          <a href="/zakat-calculator/" class="related-card"><span class="related-icon">🌙</span> Zakat Calculator</a>
+          <a href="/emi-calculator/" class="related-card"><span class="related-icon">📊</span> EMI Calculator</a>
+          <a href="/number-to-urdu-words/" class="related-card"><span class="related-icon">🔢</span> Urdu Number Words</a>
+          <a href="/word-counter/" class="related-card"><span class="related-icon">📝</span> Word Counter</a>
+        </div>
+      </section>
+
+      <!-- Ad Slot 2 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 2 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Bottom)</span>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/assets/site.js"></script>
+  <script src="/assets/tools/age.js"></script>
+</body>
+</html>

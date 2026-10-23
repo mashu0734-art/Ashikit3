@@ -1,0 +1,6 @@
+{
+  "name": "Ashikit – Free Roman Urdu Converter & Urdu Tools",
+  "description": "Free Roman Urdu to Urdu converter, Zakat calculator, EMI calculator, Stylish names, Image compressor, CV maker aur PDF merge tools with modern Aqua and Black design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

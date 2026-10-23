@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ur-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Number to Urdu Words Converter (0 to 9,999,999) – AshiKit</title>
+  <meta name="description" content="Number ko Urdu lafzon mein badlein (0 se 99 lakh tak). Cheque, raseed aur legal dastawezat likhne ke liye free Urdu number words converter.">
+  <link rel="canonical" href="https://YOUR_DOMAIN.pages.dev/number-to-urdu-words/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Number to Urdu Words Converter – AshiKit">
+  <meta property="og:description" content="Hindon ko Urdu lafzon mein foran tabdeel karein (jaise 1500 = ایک ہزار پانچ سو).">
+  <meta property="og:url" content="https://YOUR_DOMAIN.pages.dev/number-to-urdu-words/">
+  <meta property="og:site_name" content="AshiKit">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Number to Urdu Words Converter – AshiKit">
+  <meta name="twitter:description" content="Numbers ko Urdu ginti aur words mein convert karein.">
+
+  <!-- JSON-LD WebApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "AshiKit Number to Urdu Words Converter",
+        "url": "https://YOUR_DOMAIN.pages.dev/number-to-urdu-words/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "description": "Convert numerical digits (0 to 9,999,999) into authentic Nastaliq Urdu words and Roman Urdu pronunciation with currency format support.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PKR" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Bank cheque likhte waqt ye tool kaise madad karta hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Aap raqam darj karein aur 'Rupee Currency' checkbox check karein, ye foran 'ایک لاکھ پچیس ہزار روپے فقط' tayyar kar deta hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Ye tool kitni hadd tak numbers convert karta hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ye tool sifar (0) se lekar 9,999,999 (ninnanway lakh ninnanway hazar nau sau ninnanway) tak poori accuracy ke sath convert karta hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kya Roman Urdu mein bhi talaffuz milta hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Jee haan, Urdu Nastaliq rasm-ul-khat ke bilkul neeche Roman English mein bhi talaffuz likha aata hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Pakistani number system (Lakh/Hazar) use hota hai ya Million?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Ye tool mukammal tor par Pakistani aur sub-continental numbering system (Lakh, Hazar, Sau) ke mutabiq kaam karta hai." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="main-content">
+    <div class="wrap">
+      
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Number to Urdu Words</span>
+      </nav>
+
+      <div class="page-intro">
+        <h1 class="page-title">Number to Urdu Words Converter</h1>
+        <p class="page-sub">
+          Hindon (0 se 9,999,999 tak) ko authentic Urdu lafzon aur Roman Urdu mein badlein. Cheque aur legal papers ke liye mufeed.
+        </p>
+      </div>
+
+      <div class="roman-guide-box">
+        <b>🔢 Number Ko Urdu Lafzon Mein Badlein:</b> 
+        Box mein koi bhi number likhein (jaise <b>1500</b> ya <b>125000</b>). Tool foran aap ko <b>Nastaliq Urdu</b> (ایک ہزار پانچ سو) aur <b>Roman Urdu</b> (Aik Hazar Paanch Sau) mein lafz bana kar dega. Agar bank cheque likh rahe hain to <i>"Rupees / Faqat"</i> wala checkbox on karein!
+      </div>
+
+      <!-- Tool Interface -->
+      <div class="box" style="max-width: 680px; margin: 0 auto;">
+        <label for="num-inp">
+          <span>Koi Bhi Number Likhein (0 se 9,999,999)</span>
+          <span class="label-hint">Digits only</span>
+        </label>
+        <input type="number" id="num-inp" value="1500" min="0" max="9999999" placeholder="e.g. 1500" style="font-size:20px; font-weight:700;">
+
+        <!-- Currency Checkbox -->
+        <div style="margin-top:12px; display:flex; align-items:center; gap:8px;">
+          <input type="checkbox" id="num-currency" checked style="width:18px; height:18px; accent-color:var(--accent);">
+          <label for="num-currency" style="margin:0; font-weight:600; cursor:pointer;">Rupees Shamil Karein (روپے فقط / Rupees Only for Cheques)</label>
+        </div>
+
+        <!-- Quick Presets -->
+        <div style="margin-top: 14px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+          <span style="font-size: 13px; color: var(--muted); font-weight: 600;">Misalein:</span>
+          <button type="button" class="btn btn-sm num-preset" data-val="500">500</button>
+          <button type="button" class="btn btn-sm num-preset" data-val="1500">1,500</button>
+          <button type="button" class="btn btn-sm num-preset" data-val="25000">25,000</button>
+          <button type="button" class="btn btn-sm num-preset" data-val="100000">1 Lakh</button>
+          <button type="button" class="btn btn-sm num-preset" data-val="5000000">50 Lakh</button>
+        </div>
+
+        <!-- Urdu Words Output Card -->
+        <div style="margin-top:20px; background:var(--panel-alt); padding:20px; border-radius:12px; border:1.5px solid var(--line); text-align:center;">
+          <div style="font-size:12px; font-weight:700; color:var(--muted); text-transform:uppercase;">Urdu Rasm-ul-Khat</div>
+          <div id="num-urdu" dir="rtl" style="font-family:'Noto Nastaliq Urdu', serif; font-size:30px; line-height:2.4; color:var(--ink); margin:8px 0; word-break:break-word;">ایک ہزار پانچ سو روپے فقط</div>
+
+          <div style="font-size:12px; font-weight:700; color:var(--muted); text-transform:uppercase; margin-top:12px;">Roman Urdu Talaffuz</div>
+          <div id="num-roman" style="font-size:17px; font-weight:700; color:var(--accent); margin-top:4px;">Aik Hazar Paanch Sau Rupees Only</div>
+        </div>
+
+        <div class="button-bar" style="justify-content:center;">
+          <button type="button" class="btn btn-primary" id="num-copy" style="padding:12px 24px;">Urdu Lafz Copy Karein</button>
+        </div>
+      </div>
+
+      <!-- Ad Slot 1 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 1 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Under Tool)</span>
+      </div>
+
+      <!-- Explanation & FAQs -->
+      <section class="content-section">
+        <h2>Kaise Istemal Karein (How to Use)</h2>
+        <ol class="steps-list">
+          <li><b>Number Likhein:</b> Input box mein wo raqam ya number darj karein jise lafzon mein badalna hai.</li>
+          <li><b>Currency Option:</b> Cheque ya raseed ke liye "Rupees Shamil Karein" ko tick rehne dein.</li>
+          <li><b>Lafz Dekhein:</b> Nastaliq Urdu aur Roman Urdu dono mein foran sahi imla aur ginti aati hai.</li>
+          <li><b>Copy Karein:</b> "Urdu Lafz Copy Karein" par click kar ke apne banking software ya document mein paste karein.</li>
+        </ol>
+
+        <h2>Number to Urdu Words Converter Ki Mukammal Wazahat</h2>
+        <p>
+          Pakistan mein bank cheque bharte waqt, karobari raseedein banate waqt, court ke stamp papers par raqam likhte waqt, ya aam hisab kitab mein hindon ke sath sath lafzon mein raqam likhna qanooni aur banking taqaza hota hai. Aam tor par log Urdu ginti (jaise سینتالیس، بہتر، چھیاسی) ki sahi spelling aur Lakh/Hazar ke talaffuz mein ghalti kar bethte hain jis ki wajah se bank cheque bounce hone ka khatra hota hai.
+        </p>
+        <p>
+          AshiKit Number to Urdu Words Converter is maslay ka 100% mustanad aur sahi hal hai. Ye tool sub-continental numbering structure (Ikai, Dahai, Sau, Hazar, Lakh) ke qawaneen ke mutabiq lafzon ko jorta hai aur aakhir mein qanooni lafz "روپے فقط" shamil karne ki sahoolat bhi deta hai. Is tool se har koi baghair kisi jhijhak ke perfect Urdu shabdon mein raqam likh sakta hai.
+        </p>
+
+        <h2>Ahem Sawalat (FAQs)</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3 class="faq-q">Bank cheque likhte waqt ye tool kaise madad karta hai?</h3>
+            <p class="faq-a">Aap raqam darj karein aur 'Rupee Currency' checkbox check karein, ye foran 'ایک لاکھ پچیس ہزار روپے فقط' tayyar kar deta hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Ye tool kitni hadd tak numbers convert karta hai?</h3>
+            <p class="faq-a">Ye tool sifar (0) se lekar 9,999,999 (ninnanway lakh ninnanway hazar nau sau ninnanway) tak poori accuracy ke sath convert karta hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Kya Roman Urdu mein bhi talaffuz milta hai?</h3>
+            <p class="faq-a">Jee haan, Urdu Nastaliq rasm-ul-khat ke bilkul neeche Roman English mein bhi talaffuz likha aata hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Pakistani number system (Lakh/Hazar) use hota hai ya Million?</h3>
+            <p class="faq-a">Ye tool mukammal tor par Pakistani aur sub-continental numbering system (Lakh, Hazar, Sau) ke mutabiq kaam karta hai.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Tools -->
+      <section class="related-tools">
+        <h2 style="font-size:22px; font-weight:800; color:var(--ink);">Doosray Mutalliqah Tools</h2>
+        <div class="related-grid">
+          <a href="/zakat-calculator/" class="related-card"><span class="related-icon">🌙</span> Zakat Calculator</a>
+          <a href="/emi-calculator/" class="related-card"><span class="related-icon">📊</span> EMI Calculator</a>
+          <a href="/roman-urdu-to-urdu/" class="related-card"><span class="related-icon">✍️</span> Urdu Converter</a>
+          <a href="/word-counter/" class="related-card"><span class="related-icon">📝</span> Word Counter</a>
+        </div>
+      </section>
+
+      <!-- Ad Slot 2 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 2 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Bottom)</span>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/assets/site.js"></script>
+  <script src="/assets/tools/number-words.js"></script>
+</body>
+</html>

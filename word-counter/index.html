@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="ur-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Word and Character Counter (Urdu & English) – AshiKit</title>
+  <meta name="description" content="Free word and character counter online. Urdu aur English text ke alfaz, haroof, jumlay aur reading time ka live hisab lagayein.">
+  <link rel="canonical" href="https://YOUR_DOMAIN.pages.dev/word-counter/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Word and Character Counter – AshiKit">
+  <meta property="og:description" content="Lafzon aur haroof ka live hisab lagayein. Urdu aur English dono ke liye.">
+  <meta property="og:url" content="https://YOUR_DOMAIN.pages.dev/word-counter/">
+  <meta property="og:site_name" content="AshiKit">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Word and Character Counter – AshiKit">
+  <meta name="twitter:description" content="Urdu aur English tehreer ke alfaz aur characters count karein.">
+
+  <!-- JSON-LD WebApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "AshiKit Word and Character Counter",
+        "url": "https://YOUR_DOMAIN.pages.dev/word-counter/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "description": "Live word, character, sentence, and reading time counter supporting both Urdu and English text.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PKR" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Kya ye counter Urdu rasm-ul-khat ke alfaz sahi count karta hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Jee haan, hamara counter Urdu ki khas space aur alamaat (jaise comma ، aur khatma ۔) ko pehchan kar durust hisab lagata hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Characters with space aur without space mein kya farq hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "With space mein khali jagahon (spaces) ko bhi aik character mana jata hai, jabke without space mein sirf asal haroof count hote hain." }
+          },
+          {
+            "@type": "Question",
+            "name": "Reading time ka hisab kaise lagaya jata hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Aam tor par aik insan 200 alfaz fi minute ki raftaar se parhta hai, is bunyad par reading time ka andaza hota hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kya koi word limit ya pabandi hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Nahi, aap jitna chahein lamba mazmoon ya kitab ka chapter paste kar ke foran hisab laga sakte hain." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="main-content">
+    <div class="wrap">
+      
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Word Counter</span>
+      </nav>
+
+      <div class="page-intro">
+        <h1 class="page-title">Word & Character Counter</h1>
+        <p class="page-sub">
+          Lafzon, haroof, jumlon aur reading time ka live andaza lagayein. Urdu aur English dono ke liye bilkul muft.
+        </p>
+      </div>
+
+      <div class="roman-guide-box">
+        <b>📝 Word Counter Kaise Kaam Karta Hai?</b> 
+        Apna mazmoon, essay ya social media post box mein paste karein ya type karein. Tool foran aap ko <b>Kul Alfaz (Words)</b>, <b>Haroof (Characters)</b>, <b>Jumlay (Sentences)</b> aur parhne ka waqt (Reading Time) live calculate kar ke bataye ga!
+      </div>
+
+      <!-- Tool Interface -->
+      <div class="box">
+        <!-- Live Stat Cards -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:10px; margin-bottom:16px;">
+          <div style="background:var(--accent-soft); border:1.5px solid var(--accent); padding:12px; border-radius:10px; text-align:center;">
+            <div style="font-size:12px; font-weight:700; color:var(--muted); text-transform:uppercase;">Alfaz (Words)</div>
+            <div id="stat-words" style="font-size:26px; font-weight:800; color:var(--ink);">0</div>
+          </div>
+          <div style="background:var(--panel-alt); border:1.5px solid var(--line); padding:12px; border-radius:10px; text-align:center;">
+            <div style="font-size:12px; font-weight:700; color:var(--muted); text-transform:uppercase;">Haroof (With Space)</div>
+            <div id="stat-chars" style="font-size:24px; font-weight:800; color:var(--ink);">0</div>
+          </div>
+          <div style="background:var(--panel-alt); border:1.5px solid var(--line); padding:12px; border-radius:10px; text-align:center;">
+            <div style="font-size:12px; font-weight:700; color:var(--muted); text-transform:uppercase;">Bina Space Haroof</div>
+            <div id="stat-chars-nospace" style="font-size:24px; font-weight:800; color:var(--ink);">0</div>
+          </div>
+          <div style="background:var(--panel-alt); border:1.5px solid var(--line); padding:12px; border-radius:10px; text-align:center;">
+            <div style="font-size:12px; font-weight:700; color:var(--muted); text-transform:uppercase;">Jumlay (Sentences)</div>
+            <div id="stat-sentences" style="font-size:24px; font-weight:800; color:var(--ink);">0</div>
+          </div>
+          <div style="background:var(--panel-alt); border:1.5px solid var(--line); padding:12px; border-radius:10px; text-align:center;">
+            <div style="font-size:12px; font-weight:700; color:var(--muted); text-transform:uppercase;">Paragraphs</div>
+            <div id="stat-paras" style="font-size:24px; font-weight:800; color:var(--ink);">0</div>
+          </div>
+          <div style="background:var(--panel-alt); border:1.5px solid var(--line); padding:12px; border-radius:10px; text-align:center;">
+            <div style="font-size:12px; font-weight:700; color:var(--muted); text-transform:uppercase;">Reading Time</div>
+            <div id="stat-readtime" style="font-size:20px; font-weight:800; color:var(--accent);">0 min</div>
+          </div>
+        </div>
+
+        <label for="cnt-text">
+          <span>Yahan Text Type Ya Paste Karein</span>
+          <span class="label-hint">Urdu, Roman Urdu ya English</span>
+        </label>
+        <textarea id="cnt-text" class="editor" dir="auto" placeholder="Apna mazmoon, essay, ya text yahan likhein..."></textarea>
+
+        <div class="button-bar">
+          <button type="button" class="btn btn-primary" id="cnt-copy">Text Copy Karein</button>
+          <button type="button" class="btn" id="cnt-sample">Misal Dekhein</button>
+          <button type="button" class="btn" id="cnt-clear">Saaf Karein</button>
+        </div>
+      </div>
+
+      <!-- Ad Slot 1 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 1 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Under Tool)</span>
+      </div>
+
+      <!-- Explanation & FAQs -->
+      <section class="content-section">
+        <h2>Kaise Istemal Karein (How to Use)</h2>
+        <ol class="steps-list">
+          <li><b>Text Daalein:</b> Upar diye gaye bade box mein apna koi bhi text type karein ya paste karein.</li>
+          <li><b>Live Stats:</b> Kisi button dabaye baghair samne diye gaye cards foran update ho jayenge.</li>
+          <li><b>Spaces Check:</b> Agar Twitter ya SMS ke liye character limit dekhni hai to "Haroof" section dekhein.</li>
+          <li><b>Copy Ya Clear:</b> Kaam mukammal hone par text copy karein ya clear button se saaf karein.</li>
+        </ol>
+
+        <h2>Word Counter Ki Mukammal Wazahat</h2>
+        <p>
+          Taleemi maidan mein talba o talibaat ko aksar mukhtalif mazameen (essays), assignments ya thesis likhte waqt alfaz ki aik makhsoos hadd (misal ke tor par 500 ya 1000 alfaz) ka paband hona padta hai. Isi tarha content writers, bloggers aur social media managers ko bhi search engine optimization (SEO) aur platform limits (jaise Meta title ya Twitter X post) ke mutabiq lafzon aur haroof ka hisab rakhna padta hai.
+        </p>
+        <p>
+          AshiKit Word & Character Counter khas tor par Pakistani users ki zarooriyat ke mutabiq design kiya gaya hai jo English ke sath sath Roman Urdu aur Nastaliq Urdu script dono ko yakja tor par handle karta hai. Ye tool na sirf alfaz aur haroof balkay jumlon, paragraphs aur taqreeban parhne ke waqt ka bhi hisab nikal kar deta hai. Sab kuch real-time aur private tareeqe se hota hai.
+        </p>
+
+        <h2>Ahem Sawalat (FAQs)</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3 class="faq-q">Kya ye counter Urdu rasm-ul-khat ke alfaz sahi count karta hai?</h3>
+            <p class="faq-a">Jee haan, hamara counter Urdu ki khas space aur alamaat (jaise comma ، aur khatma ۔) ko pehchan kar durust hisab lagata hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Characters with space aur without space mein kya farq hai?</h3>
+            <p class="faq-a">With space mein khali jagahon (spaces) ko bhi aik character mana jata hai, jabke without space mein sirf asal haroof count hote hain.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Reading time ka hisab kaise lagaya jata hai?</h3>
+            <p class="faq-a">Aam tor par aik insan 200 alfaz fi minute ki raftaar se parhta hai, is bunyad par reading time ka andaza hota hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Kya koi word limit ya pabandi hai?</h3>
+            <p class="faq-a">Nahi, aap jitna chahein lamba mazmoon ya kitab ka chapter paste kar ke foran hisab laga sakte hain.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Tools -->
+      <section class="related-tools">
+        <h2 style="font-size:22px; font-weight:800; color:var(--ink);">Doosray Mutalliqah Tools</h2>
+        <div class="related-grid">
+          <a href="/text-case-converter/" class="related-card"><span class="related-icon">🔠</span> Text Case Converter</a>
+          <a href="/roman-urdu-to-urdu/" class="related-card"><span class="related-icon">✍️</span> Urdu Converter</a>
+          <a href="/number-to-urdu-words/" class="related-card"><span class="related-icon">🔢</span> Urdu Number Words</a>
+          <a href="/shayari-card-maker/" class="related-card"><span class="related-icon">🎨</span> Shayari Card Maker</a>
+        </div>
+      </section>
+
+      <!-- Ad Slot 2 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 2 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Bottom)</span>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/assets/site.js"></script>
+  <script src="/assets/tools/counter.js"></script>
+</body>
+</html>

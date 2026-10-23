@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ur-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Online CV Maker – Free Professional Resume Builder – AshiKit</title>
+  <meta name="description" content="Free professional CV banayein. Urdu ya English mein maloomat bharein, live preview dekhein aur direct PDF save karein. 100% muft.">
+  <link rel="canonical" href="https://YOUR_DOMAIN.pages.dev/cv-maker/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Online CV Maker – AshiKit">
+  <meta property="og:description" content="Professional CV asani se tayyar karein aur direct PDF download karein.">
+  <meta property="og:url" content="https://YOUR_DOMAIN.pages.dev/cv-maker/">
+  <meta property="og:site_name" content="AshiKit">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Online CV Maker – AshiKit">
+  <meta name="twitter:description" content="Naukri ke liye shandar CV banayein live preview ke sath.">
+
+  <!-- JSON-LD WebApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "AshiKit CV Maker",
+        "url": "https://YOUR_DOMAIN.pages.dev/cv-maker/",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "description": "Free instant resume and CV maker with dual-column live preview and print-to-PDF functionality supporting Urdu and English text.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PKR" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "PDF kaise save karein?",
+            "acceptedAnswer": { "@type": "Answer", "text": "PDF Save Karein button dabane par khulne wale print box mein Destination ko 'Save as PDF' chunein." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kya meri private maloomat internet par save hoti hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Hargiz nahi! Saara data aap ke browser ki temporary memory mein rehta hai aur page band karne par saaf ho jata hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kya main Urdu mein bhi CV bana sakta hoon?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Jee haan, hamara preview Urdu rasm-ul-khat aur English dono ko mukammal support karta hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kya CV maker bilkul free hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Jee haan, 100% muft hai aur koi watermark ya subscription charge nahi hota." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/style.css">
+  <style>
+    #cvp {
+      background: #ffffff;
+      color: #222222;
+      padding: 28px;
+      border-radius: var(--radius-md);
+      min-height: 480px;
+      font-size: 14.5px;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="main-content">
+    <div class="wrap">
+      
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>CV Maker</span>
+      </nav>
+
+      <div class="page-intro">
+        <div class="privacy-badge">🔒 100% Private In-Browser • Zero Data Storage</div>
+        <h1 class="page-title">Free Online CV Maker</h1>
+        <p class="page-sub">
+          Maloomat bharein, CV saath saath bante dekhein, phir PDF save karein. Urdu ya English dono chalte hain.
+        </p>
+      </div>
+
+      <div class="roman-guide-box">
+        <b>📄 CV Banane Ka Asaan Tareeqa:</b> 
+        Left side wale form mein apna naam, phone, tajurba (experience) aur taleem likhein. Right side par aap ki CV foran live update hoti rahe gi. 
+        Apna pasandeeda rang chunein aur <b>"PDF Save Karein"</b> button dabayein. Khulne wale print dialog mein <i>"Destination"</i> ke option mein <b>"Save as PDF"</b> muntakhib kar ke download kar lein!
+      </div>
+
+      <!-- Live CV Builder Grid -->
+      <div class="grid-2">
+        <div class="box" id="cvform">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <h3 style="margin: 0; font-size: 18px; font-weight: 800;">Aap Ki Maloomat</h3>
+            <button type="button" class="btn btn-sm" id="btn-sample-cv">Sample Bharein</button>
+          </div>
+
+          <label for="c1">Pura Naam</label>
+          <input type="text" id="c1" placeholder="e.g. Muhammad Ali">
+
+          <label for="c2">Job Title / Sho'ba</label>
+          <input type="text" id="c2" placeholder="e.g. Graphic Designer / Accountant">
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div>
+              <label for="c3">Phone Number</label>
+              <input type="text" id="c3" placeholder="0300-1234567">
+            </div>
+            <div>
+              <label for="c4">Email Address</label>
+              <input type="email" id="c4" placeholder="ali@example.com">
+            </div>
+          </div>
+
+          <label for="c5">Shehar / Location</label>
+          <input type="text" id="c5" placeholder="Karachi, Pakistan">
+
+          <label for="c6">Apne Baare Mein (Profile Summary)</label>
+          <textarea id="c6" style="min-height:80px;" placeholder="2 se 3 jumlay apne tajurbe ke baare mein..."></textarea>
+
+          <label for="c7">Skills (Comma se alag karein)</label>
+          <input type="text" id="c7" placeholder="MS Office, Graphic Design, Communication">
+
+          <label for="c8">Tajurba (Har line mein aik entry)</label>
+          <textarea id="c8" style="min-height:85px;" placeholder="Graphic Designer at TechSol (2022 - Haal)&#10;Junior Designer at CreativeHub (2020 - 2022)"></textarea>
+
+          <label for="c9">Taleem (Har line mein aik entry)</label>
+          <textarea id="c9" style="min-height:80px;" placeholder="BS Computer Science - Karachi University (2020)&#10;Intermediate (2016)"></textarea>
+
+          <label for="cc">CV Ka Theme Rang</label>
+          <select id="cc">
+            <option value="#0E3B43">Deep Teal (Classic)</option>
+            <option value="#1F4E9C">Corporate Blue</option>
+            <option value="#8A1C3B">Rich Maroon</option>
+            <option value="#222222">Classic Charcoal</option>
+          </select>
+
+          <div class="button-bar">
+            <button type="button" class="btn btn-primary" id="cvpdf" style="flex: 1; padding: 12px;">PDF Save Karein 🖨️</button>
+            <button type="button" class="btn" id="cvclear">Clear Form</button>
+          </div>
+
+          <p class="note">
+            💡 <b>PDF Tip:</b> Print box aane par <i>"Save as PDF"</i> chunein aur Headers/Footers ko uncheck karein.
+          </p>
+        </div>
+
+        <!-- Right: Live Preview -->
+        <div class="box">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <h3 style="margin: 0; font-size: 18px; font-weight: 800;">Live CV Preview</h3>
+            <span style="font-size: 12px; font-weight: 700; color: var(--accent); background: var(--accent-soft); padding: 3px 8px; border-radius: 4px;">A4 Format</span>
+          </div>
+
+          <div id="cvp"></div>
+        </div>
+      </div>
+
+      <!-- Ad Slot 1 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 1 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Under Tool)</span>
+      </div>
+
+      <!-- Explanation & FAQs -->
+      <section class="content-section">
+        <h2>Kaise Istemal Karein (How to Use)</h2>
+        <ol class="steps-list">
+          <li><b>Khaane Bharein:</b> Left panel mein apna pura naam, raabta number, email aur shehar likhein.</li>
+          <li><b>Tajurba & Taleem:</b> Apni taleem aur pichli jobs ki tafseelat har line mein alag alag likhein.</li>
+          <li><b>Live Preview Dekhein:</b> Right side par aap ki CV real-time mein A4 layout mein banti nazar aaye gi.</li>
+          <li><b>PDF Save Karein:</b> "PDF Save Karein" par click karein aur browser print dialog se direct PDF file download karein.</li>
+        </ol>
+
+        <h2>CV Maker Ki Mukammal Wazahat</h2>
+        <p>
+          Job market mein behtareen mulazmat hasil karne ke liye pehla qadam aik saaf, professional aur asani se parhi jane wali CV (Curriculum Vitae ya Resume) tayyar karna hota hai. Aksar log MS Word ya bhari software ke formatting masail mein ulajh jate hain jahan text ya margins kharab ho jate hain.
+        </p>
+        <p>
+          AshiKit CV Maker aap ko aik khubsurat standard dual-column live layout faraham karta hai. Jaise jaise aap form mein apni maloomat likhte hain, aap ki CV bilkul tayyar halat mein samne aati rehti hai. Hamara tool ATS-friendly typography istemal karta hai aur Urdu Nastaliq font ke sath sath English text ko bhi standard tareeqe se support karta hai. Jab aap PDF save karte hain to clean print stylesheet ke zariye tamam buttons aur fuzool cheezein gayab ho jati hain aur sirf pure resume print hota hai.
+        </p>
+
+        <h2>Ahem Sawalat (FAQs)</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3 class="faq-q">PDF kaise save karein?</h3>
+            <p class="faq-a">PDF Save Karein button dabane par khulne wale print box mein Destination ko 'Save as PDF' chunein.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Kya meri private maloomat internet par save hoti hai?</h3>
+            <p class="faq-a">Hargiz nahi! Saara data aap ke browser ki temporary memory mein rehta hai aur page band karne par saaf ho jata hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Kya main Urdu mein bhi CV bana sakta hoon?</h3>
+            <p class="faq-a">Jee haan, hamara preview Urdu rasm-ul-khat aur English dono ko mukammal support karta hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Kya CV maker bilkul free hai?</h3>
+            <p class="faq-a">Jee haan, 100% muft hai aur koi watermark ya subscription charge nahi hota.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Tools -->
+      <section class="related-tools">
+        <h2 style="font-size:22px; font-weight:800; color:var(--ink);">Doosray Mutalliqah Tools</h2>
+        <div class="related-grid">
+          <a href="/pdf-merge/" class="related-card"><span class="related-icon">📑</span> PDF Merge</a>
+          <a href="/image-compress/" class="related-card"><span class="related-icon">🖼️</span> Image Compress</a>
+          <a href="/word-counter/" class="related-card"><span class="related-icon">📝</span> Word Counter</a>
+          <a href="/roman-urdu-to-urdu/" class="related-card"><span class="related-icon">✍️</span> Urdu Converter</a>
+        </div>
+      </section>
+
+      <!-- Ad Slot 2 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 2 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Bottom)</span>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/assets/site.js"></script>
+  <script src="/assets/tools/cv.js"></script>
+</body>
+</html>

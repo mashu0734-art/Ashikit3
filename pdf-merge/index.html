@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ur-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PDF Merge Online – Kai PDF Files ko Aik Banayein – AshiKit</title>
+  <meta name="description" content="Do ya do se zyada PDF files ko aik single document mein merge karein. Bilkul muft, tez aur 100% browser-based safe merging.">
+  <link rel="canonical" href="https://YOUR_DOMAIN.pages.dev/pdf-merge/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PDF Merge Online – AshiKit">
+  <meta property="og:description" content="Kai PDF files ko aik file bana lein. File aap ke browser se bahar nahi jati.">
+  <meta property="og:url" content="https://YOUR_DOMAIN.pages.dev/pdf-merge/">
+  <meta property="og:site_name" content="AshiKit">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PDF Merge Online – AshiKit">
+  <meta name="twitter:description" content="PDF documents ko aik sath jor kar aik file banayein.">
+
+  <!-- JSON-LD WebApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "AshiKit PDF Merge",
+        "url": "https://YOUR_DOMAIN.pages.dev/pdf-merge/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "description": "Combine multiple PDF documents into a single PDF in the browser using PDF-Lib with page ordering controls.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PKR" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Kya meri PDF files kisi server par upload hoti hain?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Hargiz nahi! AshiKit PDF Merge tool mukammal tor par aap ke browser mein chalta hai. Aap ke documents 100% mehfooz aur private rehte hain." }
+          },
+          {
+            "@type": "Question",
+            "name": "Password wali PDF files merge kyu nahi hoti?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Security ki wajah se encrypted/locked files ko pehle password enter kar ke unlock karna padta hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Files ki tarteeb (order) kaise badlein?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Har file ke samne diye gaye Upar (↑) ya Neeche (↓) buttons dabayein taake pehle aur baad mein aane wale pages tay ho sakein." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kya mobile par PDF merge kaam karta hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Jee haan, Android aur iPhone dono par Chrome ya Safari browser mein bina kisi app ke kaam karta hai." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="main-content">
+    <div class="wrap">
+      
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>PDF Merge</span>
+      </nav>
+
+      <div class="page-intro">
+        <div class="privacy-badge">🔒 100% In-Browser Privacy • Zero Server Uploads</div>
+        <h1 class="page-title">PDF Merge Tool</h1>
+        <p class="page-sub">
+          Kai PDF files ko aik file bana lein. File aap ke browser se bahar nahi jati, mukammal tor par private hai.
+        </p>
+      </div>
+
+      <div class="roman-guide-box">
+        <b>📑 PDF Merge Karne Ka Tareeqa:</b> 
+        1. <b>"PDF files chunein"</b> button par click kar ke aik se zyada PDF documents select karein.<br>
+        2. Tarteeb theek karne ke liye har file ke samne <b>↑ (Upar)</b> ya <b>↓ (Neeche)</b> button dabayein, ya ghalat file ko <b>✕</b> se hatayein.<br>
+        3. <b>"Merge Karein"</b> button dabayein aur kuch hi lamhon mein aik nayi mushtarka file <i>merged.pdf</i> download kar lein!
+      </div>
+
+      <!-- Tool Interface -->
+      <div class="box" style="max-width: 680px; margin: 0 auto;">
+        <label for="pf">
+          <span>PDF Files Chunein (Aik se zyada)</span>
+          <span class="label-hint">Multiple PDF files</span>
+        </label>
+        <input type="file" id="pf" accept="application/pdf" multiple style="padding: 14px; background: var(--panel-alt);">
+
+        <div style="margin-top: 18px;">
+          <label>Muntakhib Shuda Files Ki List:</label>
+          <div id="plist" style="margin-top: 8px; min-height: 40px;">
+            <div style="color: var(--muted); font-size: 14px; padding: 12px 0;">Abhi koi PDF file nahi chuni gayi. Upar button se files chunein.</div>
+          </div>
+        </div>
+
+        <div class="button-bar">
+          <button type="button" class="btn btn-primary" id="pgo" style="flex: 1; padding: 12px;">Files Merge Karein 📑</button>
+          <button type="button" class="btn" id="pclear">Saaf Karein</button>
+        </div>
+
+        <div class="res-box" id="pres"></div>
+
+        <p class="note">
+          ⚠️ <b>Zaroori Baat:</b> Password protected (locked) PDF files security reasons ki wajah se merge nahi hotin. Pehle password hata lein.
+        </p>
+      </div>
+
+      <!-- Ad Slot 1 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 1 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Under Tool)</span>
+      </div>
+
+      <!-- Explanation & FAQs -->
+      <section class="content-section">
+        <h2>Kaise Istemal Karein (How to Use)</h2>
+        <ol class="steps-list">
+          <li><b>Files Select Karein:</b> File picker ke zariye apne mobile ya computer se 2 ya us se zyada PDF documents chunein.</li>
+          <li><b>Order Set Karein:</b> Arrows (↑ / ↓) ke zariye files ki sahi tarteeb banayein taake pages sahi jagah aaein.</li>
+          <li><b>Merge Start Karein:</b> "Files Merge Karein" button par click karein. Browser ke andar foran combine process shuru hoga.</li>
+          <li><b>Download Karein:</b> Tayyar shuda single "merged.pdf" file par click kar ke foran download karein.</li>
+        </ol>
+
+        <h2>PDF Merge Ki Mukammal Wazahat</h2>
+        <p>
+          Rozmarrah ke daftari, taleemi ya sarkari kaamon mein mukhtalif documents jaise ke CNIC ki front/back copy, educational degrees, bank statement aur experience certificates ko aik hi PDF file mein jama karna zaroori hota hai. Aam tor par log aisi files ko online aam websites par upload karte hain jahan private maloomat leak hone ka khatra hota hai.
+        </p>
+        <p>
+          AshiKit PDF Merge tool dunya ki mashhoor client-side engine <code>pdf-lib</code> ke zariye kaam karta hai. Is ka matlab ye hai ke aap ki koi bhi file hamare server par nahi jati balkay sab kuch aap ke apne web browser ki memory mein process hota hai. Is tarha aap ke hasas aur confidential documents 100% mehfooz rehte hain aur internet data bhi zaya nahi hota.
+        </p>
+
+        <h2>Ahem Sawalat (FAQs)</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3 class="faq-q">Kya meri PDF files kisi server par upload hoti hain?</h3>
+            <p class="faq-a">Hargiz nahi! AshiKit PDF Merge tool mukammal tor par aap ke browser mein chalta hai. Aap ke documents 100% mehfooz aur private rehte hain.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Password wali PDF files merge kyu nahi hoti?</h3>
+            <p class="faq-a">Security ki wajah se encrypted/locked files ko pehle password enter kar ke unlock karna padta hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Files ki tarteeb (order) kaise badlein?</h3>
+            <p class="faq-a">Har file ke samne diye gaye Upar (↑) ya Neeche (↓) buttons dabayein taake pehle aur baad mein aane wale pages tay ho sakein.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Kya mobile par PDF merge kaam karta hai?</h3>
+            <p class="faq-a">Jee haan, Android aur iPhone dono par Chrome ya Safari browser mein bina kisi app ke kaam karta hai.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Tools -->
+      <section class="related-tools">
+        <h2 style="font-size:22px; font-weight:800; color:var(--ink);">Doosray Mutalliqah Tools</h2>
+        <div class="related-grid">
+          <a href="/cv-maker/" class="related-card"><span class="related-icon">📄</span> CV Maker</a>
+          <a href="/image-compress/" class="related-card"><span class="related-icon">🖼️</span> Image Compress</a>
+          <a href="/image-resize/" class="related-card"><span class="related-icon">📐</span> Image Resize</a>
+          <a href="/word-counter/" class="related-card"><span class="related-icon">📝</span> Word Counter</a>
+        </div>
+      </section>
+
+      <!-- Ad Slot 2 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 2 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Bottom)</span>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <!-- Load pdf-lib from cdnjs ONLY on this page -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+  <script src="/assets/site.js"></script>
+  <script src="/assets/tools/pdf.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ur-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QR Code Generator Online – Free PNG Download – AshiKit</title>
+  <meta name="description" content="Free QR code generator. Kisi bhi link, website ya text ka high quality QR code banayein aur PNG download karein. 100% muft.">
+  <link rel="canonical" href="https://YOUR_DOMAIN.pages.dev/qr-code-generator/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="QR Code Generator Online – AshiKit">
+  <meta property="og:description" content="Website link ya text ka custom QR code banayein aur PNG download karein.">
+  <meta property="og:url" content="https://YOUR_DOMAIN.pages.dev/qr-code-generator/">
+  <meta property="og:site_name" content="AshiKit">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="QR Code Generator Online – AshiKit">
+  <meta name="twitter:description" content="Website link aur WhatsApp ke liye QR code banayein.">
+
+  <!-- JSON-LD WebApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "AshiKit QR Code Generator",
+        "url": "https://YOUR_DOMAIN.pages.dev/qr-code-generator/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "description": "Generate high-resolution PNG QR codes for URLs, text, WhatsApp numbers, and WiFi credentials.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PKR" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Kya ye QR code kabhi expire hota hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Hargiz nahi! Ye static QR code hota hai jo hamesha ke liye kaam karta hai aur kabhi expire nahi hota." }
+          },
+          {
+            "@type": "Question",
+            "name": "WhatsApp chat ka QR code kaise banayein?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Input box mein https://wa.me/923001234567 likhein aur Generate button dabayein." }
+          },
+          {
+            "@type": "Question",
+            "name": "QR code ko scan kaise kiya jata hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Kisi bhi smartphone ke camera ya Google Lens se scan kiya ja sakta hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kya colors customize kiye ja sakte hain?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Jee haan, aap QR code ka color aur background color apni marzi ke mutabiq chunn sakte hain." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="main-content">
+    <div class="wrap">
+      
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>QR Code Generator</span>
+      </nav>
+
+      <div class="page-intro">
+        <h1 class="page-title">QR Code Generator</h1>
+        <p class="page-sub">
+          Kisi bhi website link, WhatsApp number ya text ka QR code banayein aur high quality PNG mein download karein.
+        </p>
+      </div>
+
+      <div class="roman-guide-box">
+        <b>📱 QR Code Kaise Banayein?</b> 
+        Input box mein apni website ka link (jaise <i>https://example.com</i>) ya WhatsApp number darj karein. 
+        <b>"QR Code Banayein"</b> button par click karein aur tayyar shuda code ko aik click mein PNG format mein download karein!
+      </div>
+
+      <!-- Tool Interface -->
+      <div class="box" style="max-width: 640px; margin: 0 auto;">
+        <label for="qr-text">
+          <span>Website URL Ya Text Likhein</span>
+          <span class="label-hint">Link, text, phone number</span>
+        </label>
+        <input type="text" id="qr-text" value="https://YOUR_DOMAIN.pages.dev" placeholder="https://..." style="font-size:16px;">
+
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-top:14px;">
+          <div>
+            <label for="qr-size">Size (Pixels)</label>
+            <select id="qr-size">
+              <option value="180">Chota (180px)</option>
+              <option value="240" selected>Standard (240px)</option>
+              <option value="320">Bada (320px)</option>
+            </select>
+          </div>
+          <div>
+            <label for="qr-color-dark">Code Color</label>
+            <input type="color" id="qr-color-dark" value="#0E3B43" style="height:44px; padding:2px; cursor:pointer;">
+          </div>
+          <div>
+            <label for="qr-color-light">Background</label>
+            <input type="color" id="qr-color-light" value="#FFFFFF" style="height:44px; padding:2px; cursor:pointer;">
+          </div>
+        </div>
+
+        <div class="button-bar">
+          <button type="button" class="btn btn-primary" id="qr-gen" style="flex:1; padding:12px;">QR Code Banayein 📱</button>
+          <button type="button" class="btn" id="qr-sample">Misal</button>
+        </div>
+
+        <!-- QR Display -->
+        <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; margin-top:24px; padding:20px; background:var(--panel-alt); border-radius:12px; border:1px solid var(--line);">
+          <div id="qr-container" style="background:#fff; padding:12px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.06); min-height:180px; display:flex; align-items:center; justify-content:center;"></div>
+          <div id="qr-dl-wrap" style="margin-top:16px;"></div>
+        </div>
+      </div>
+
+      <!-- Ad Slot 1 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 1 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Under Tool)</span>
+      </div>
+
+      <!-- Explanation & FAQs -->
+      <section class="content-section">
+        <h2>Kaise Istemal Karein (How to Use)</h2>
+        <ol class="steps-list">
+          <li><b>Data Darj Karein:</b> Website ka URL, Wi-Fi password, ya koi bhi zaroori text box mein type karein.</li>
+          <li><b>Color & Size Chunein:</b> Apni marzi ke mutabiq QR code ka rang aur background set karein.</li>
+          <li><b>Generate Karein:</b> "QR Code Banayein" button par click karein.</li>
+          <li><b>Download Karein:</b> Niche aane wale "QR Code Download Karein" button se high quality PNG image save karein.</li>
+        </ol>
+
+        <h2>QR Code Generator Ki Mukammal Wazahat</h2>
+        <p>
+          Aaj kal ki digital dunya mein QR (Quick Response) codes har jagah istemal hote hain — restaurant ke menus se lekar visiting cards, business flyers, shop banners aur payments tak. Aik simple QR code kisi ko bhi lamba link type karne ki zahmat se bachata hai kyunke mobile camera foran scan kar ke mutalliqah page par le jata hai.
+        </p>
+        <p>
+          AshiKit QR Code Generator high error-correction technology par mabni static QR codes banata hai. Is ka matlab ye hai ke ye codes hamesha ke liye rehte hain, kabhi expire nahi hote aur scan karne par foran khul jate hain. Aap apne business card ke liye ya social media profiles ke liye transparent ya custom background ke sath PNG download kar sakte hain.
+        </p>
+
+        <h2>Ahem Sawalat (FAQs)</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3 class="faq-q">Kya ye QR code kabhi expire hota hai?</h3>
+            <p class="faq-a">Hargiz nahi! Ye static QR code hota hai jo hamesha ke liye kaam karta hai aur kabhi expire nahi hota.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">WhatsApp chat ka QR code kaise banayein?</h3>
+            <p class="faq-a">Input box mein https://wa.me/923001234567 likhein aur Generate button dabayein.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">QR code ko scan kaise kiya jata hai?</h3>
+            <p class="faq-a">Kisi bhi smartphone ke camera ya Google Lens se scan kiya ja sakta hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Kya colors customize kiye ja sakte hain?</h3>
+            <p class="faq-a">Jee haan, aap QR code ka color aur background color apni marzi ke mutabiq chunn sakte hain.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Tools -->
+      <section class="related-tools">
+        <h2 style="font-size:22px; font-weight:800; color:var(--ink);">Doosray Mutalliqah Tools</h2>
+        <div class="related-grid">
+          <a href="/image-resize/" class="related-card"><span class="related-icon">📐</span> Image Resize</a>
+          <a href="/image-compress/" class="related-card"><span class="related-icon">🖼️</span> Image Compress</a>
+          <a href="/shayari-card-maker/" class="related-card"><span class="related-icon">🎨</span> Shayari Card Maker</a>
+          <a href="/cv-maker/" class="related-card"><span class="related-icon">📄</span> CV Maker</a>
+        </div>
+      </section>
+
+      <!-- Ad Slot 2 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 2 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Bottom)</span>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <!-- Load qrcodejs ONLY on this page -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="/assets/site.js"></script>
+  <script src="/assets/tools/qr.js"></script>
+</body>
+</html>

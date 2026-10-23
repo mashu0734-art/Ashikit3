@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ur-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image Compressor Online – Tasveer ka Size Kam Karein – AshiKit</title>
+  <meta name="description" content="Free online image compressor. JPG, PNG tasveer ka size bina quality kharab kiye kam karein. 100% private in-browser compression.">
+  <link rel="canonical" href="https://YOUR_DOMAIN.pages.dev/image-compress/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Image Compressor Online – AshiKit">
+  <meta property="og:description" content="Tasveer ka MB/KB size kam karein. Browser ke andar 100% private processing.">
+  <meta property="og:url" content="https://YOUR_DOMAIN.pages.dev/image-compress/">
+  <meta property="og:site_name" content="AshiKit">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Image Compressor Online – AshiKit">
+  <meta name="twitter:description" content="Tasveer ka size foran kam karein aur download karein.">
+
+  <!-- JSON-LD WebApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "AshiKit Image Compressor",
+        "url": "https://YOUR_DOMAIN.pages.dev/image-compress/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "description": "Client-side private image compressor to reduce JPG, PNG file sizes without cloud uploads.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PKR" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Kya meri tasweer kisi server par upload hoti hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Hargiz nahi! AshiKit par tamam compression aap ke phone ya computer ke browser mein hoti hai. Koi file upload nahi hoti." }
+          },
+          {
+            "@type": "Question",
+            "name": "Konsi quality sab se behtareen rehti hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "70% standard recommended quality hai jis se file size bohot kam ho jata hai aur photo bilkul saaf rehti hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kya PNG aur JPG dono compress ho sakte hain?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Jee haan, JPG, PNG aur WebP formats ko asani se compress kiya ja sakta hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Govt job ya admission form ke liye size kaise kam karein?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Photo chunein aur slider ko 60% ya 50% par karein jab tak naya size 200 KB ya matlooba hadd se kam na ho jaye." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="main-content">
+    <div class="wrap">
+      
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Image Compress</span>
+      </nav>
+
+      <div class="page-intro">
+        <div class="privacy-badge">🔒 100% In-Browser Privacy • No Server Uploads</div>
+        <h1 class="page-title">Image Compress Tool</h1>
+        <p class="page-sub">
+          Tasveer ka size kam karein. Sab kuch aap ke browser mein hota hai, hamare server par upload nahi hota.
+        </p>
+      </div>
+
+      <div class="roman-guide-box">
+        <b>🖼️ Tasveer Compress Karne Ka Tareeqa:</b> 
+        1. <b>"Tasveer Chunein"</b> button par click kar ke apne mobile ya computer se koi bhi photo (JPG/PNG) select karein.<br>
+        2. <b>Quality slider</b> ko adjust karein (70% standard recommended hai).<br>
+        3. Niche purana aur naya size dekhein aur <b>"Download Karein"</b> dabayein!
+      </div>
+
+      <!-- Tool Interface -->
+      <div class="box" style="max-width: 680px; margin: 0 auto;">
+        <label for="if">
+          <span>Tasveer Chunein</span>
+          <span class="label-hint">JPG, PNG ya WebP (100% Private)</span>
+        </label>
+        <input type="file" id="if" accept="image/*" style="padding: 14px; background: var(--panel-alt);">
+
+        <div style="margin-top: 18px;">
+          <label for="q">
+            <span>Quality Level: <b id="qv" style="color: var(--accent);">70</b>%</span>
+            <span class="label-hint">Kam quality = Chota size</span>
+          </label>
+          <input type="range" id="q" min="20" max="95" value="70" style="width: 100%; accent-color: var(--accent); cursor: pointer;">
+        </div>
+
+        <div id="prev-wrap" style="display: none; margin-top: 20px; text-align: center;">
+          <img id="prev-img" alt="Compressed Preview" style="max-height: 280px; max-width: 100%; border-radius: var(--radius-md); border: 1.5px solid var(--line); object-fit: contain;">
+        </div>
+
+        <div class="res-box" id="ires"></div>
+        <div class="button-bar" id="idl" style="justify-content: center;"></div>
+
+        <p class="note">
+          🔒 <b>100% Mehfooz:</b> Aap ki niji tasweer kisi server par nahi jati. Compression direct aap ki device ki memory mein mukammal hoti hai.
+        </p>
+      </div>
+
+      <!-- Ad Slot 1 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 1 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Under Tool)</span>
+      </div>
+
+      <!-- Explanation & FAQs -->
+      <section class="content-section">
+        <h2>Kaise Istemal Karein (How to Use)</h2>
+        <ol class="steps-list">
+          <li><b>Photo Select Karein:</b> File picker se apne mobile ya laptop se photo select karein.</li>
+          <li><b>Quality Set Karein:</b> Slider ki madad se quality muntakhib karein (70% standard hai).</li>
+          <li><b>Size Farq Dekhein:</b> Asal size aur compress hone ke baad naye size ka mawazna karein.</li>
+          <li><b>Download Karein:</b> "Download Karein" button daba kar nayi compressed tasveer foran save karein.</li>
+        </ol>
+
+        <h2>Image Compression Ki Mukammal Wazahat</h2>
+        <p>
+          Aaj kal ke smart phones ke cameras high megapixel photos banate hain jin ka size aam tor par 5MB se 15MB tak chala jata hai. Itni bhari tasweer internet par upload karna mushkil hota hai, khas tor par jab aap kisi sarkari nokri (NTS, FPSC, PPSC) ya university admission portal par form bhar rahe hon jahan 100 KB ya 200 KB ki pabandi hoti hai.
+        </p>
+        <p>
+          AshiKit Image Compress tool is baat ko yaqeeni banata hai ke aap ka data aur privacy 100% mehfooz rahe. Hum HTML5 Canvas client-side technology use karte hain, jis ka matlab ye hai ke aap ki photo internet ke zariye kisi server par upload nahi hoti balkay aap ke browser ke andar hi pixel compression perform hoti hai. Is se aap ka mobile internet data bhi bachta hai aur file secondon mein compress ho kar download ke liye tayyar ho jati hai.
+        </p>
+
+        <h2>Ahem Sawalat (FAQs)</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3 class="faq-q">Kya meri tasweer kisi server par upload hoti hai?</h3>
+            <p class="faq-a">Hargiz nahi! AshiKit par tamam compression aap ke phone ya computer ke browser mein hoti hai. Koi file upload nahi hoti.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Konsi quality sab se behtareen rehti hai?</h3>
+            <p class="faq-a">70% standard recommended quality hai jis se file size bohot kam ho jata hai aur photo bilkul saaf rehti hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Kya PNG aur JPG dono compress ho sakte hain?</h3>
+            <p class="faq-a">Jee haan, JPG, PNG aur WebP formats ko asani se compress kiya ja sakta hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Govt job ya admission form ke liye size kaise kam karein?</h3>
+            <p class="faq-a">Photo chunein aur slider ko 60% ya 50% par karein jab tak naya size 200 KB ya matlooba hadd se kam na ho jaye.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Tools -->
+      <section class="related-tools">
+        <h2 style="font-size:22px; font-weight:800; color:var(--ink);">Doosray Mutalliqah Tools</h2>
+        <div class="related-grid">
+          <a href="/image-resize/" class="related-card"><span class="related-icon">📐</span> Image Resize</a>
+          <a href="/shayari-card-maker/" class="related-card"><span class="related-icon">🎨</span> Shayari Card Maker</a>
+          <a href="/pdf-merge/" class="related-card"><span class="related-icon">📑</span> PDF Merge</a>
+          <a href="/cv-maker/" class="related-card"><span class="related-icon">📄</span> CV Maker</a>
+        </div>
+      </section>
+
+      <!-- Ad Slot 2 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 2 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Bottom)</span>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/assets/site.js"></script>
+  <script src="/assets/tools/compress.js"></script>
+</body>
+</html>

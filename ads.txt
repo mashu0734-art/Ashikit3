@@ -1,0 +1,3 @@
+# AshiKit - Google AdSense Authorized Digital Sellers (ads.txt)
+# Jab aap ka AdSense account approve ho jaye, apni publisher ID yahan darj karein:
+# Example: google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ur-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image Resize Online – Width & Height Change – AshiKit</title>
+  <meta name="description" content="Free online image resizer. Tasveer ki width aur height pixels mein badlein, aspect ratio lock karein aur JPG, PNG download karein. 100% private.">
+  <link rel="canonical" href="https://YOUR_DOMAIN.pages.dev/image-resize/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Image Resize Online – AshiKit">
+  <meta property="og:description" content="Tasveer ki dimensions (pixels) apni marzi ke mutabiq badlein. 100% in-browser.">
+  <meta property="og:url" content="https://YOUR_DOMAIN.pages.dev/image-resize/">
+  <meta property="og:site_name" content="AshiKit">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Image Resize Online – AshiKit">
+  <meta name="twitter:description" content="Photo pixels (width/height) online resize karein.">
+
+  <!-- JSON-LD WebApplication & FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "AshiKit Image Resize",
+        "url": "https://YOUR_DOMAIN.pages.dev/image-resize/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "description": "Client-side private image resizing tool to modify pixel dimensions with aspect ratio lock and multi-format export.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PKR" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Lock Aspect Ratio ka kya faida hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Aspect ratio lock hone se tasveer kheenchti (stretch) nahi hai balkay natural andaz mein resize hoti hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Passport size ya form ke liye dimensions kaise rakhein?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Aam tor par online forms 300x300 ya 600x600 pixels mangte hain, aap khud type kar sakte hain." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kya meri tasveer server par upload hoti hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Hargiz nahi! Mukammal resize process aap ke device ke browser mein HTML5 canvas ke zariye hota hai." }
+          },
+          {
+            "@type": "Question",
+            "name": "Konsay format mein save kiya ja sakta hai?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Aap JPG, PNG ya WebP format mein se koi bhi muntakhib kar sakte hain." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="main-content">
+    <div class="wrap">
+      
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Image Resize</span>
+      </nav>
+
+      <div class="page-intro">
+        <div class="privacy-badge">🔒 100% In-Browser Privacy • Zero Server Uploads</div>
+        <h1 class="page-title">Image Resize Tool</h1>
+        <p class="page-sub">
+          Tasveer ki width aur height pixels mein badlein. Sab kuch browser mein hota hai, upload nahi hota.
+        </p>
+      </div>
+
+      <div class="roman-guide-box">
+        <b>📐 Tasveer Resize Karne Ka Tareeqa:</b> 
+        1. <b>"Tasveer Chunein"</b> par click kar ke photo upload karein.<br>
+        2. Nayi <b>Width</b> aur <b>Height</b> pixels mein darj karein (Ratio Lock check karne se photo kharab nahi hoti).<br>
+        3. <b>"Resize Karein"</b> button dabayein aur foran download karein!
+      </div>
+
+      <!-- Tool Interface -->
+      <div class="box" style="max-width: 680px; margin: 0 auto;">
+        <label for="res-file">
+          <span>Tasveer Chunein</span>
+          <span class="label-hint">JPG, PNG ya WebP</span>
+        </label>
+        <input type="file" id="res-file" accept="image/*" style="padding: 14px; background: var(--panel-alt);">
+        <div id="res-orig-info" style="font-size:13px; color:var(--muted); margin-top:4px;"></div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:14px;">
+          <div>
+            <label for="res-width">Chorai (Width in Pixels)</label>
+            <input type="number" id="res-width" placeholder="e.g. 800" min="10">
+          </div>
+          <div>
+            <label for="res-height">Lambai (Height in Pixels)</label>
+            <input type="number" id="res-height" placeholder="e.g. 600" min="10">
+          </div>
+        </div>
+
+        <div style="margin-top: 10px; display:flex; align-items:center; gap:8px;">
+          <input type="checkbox" id="res-lock" checked style="width:18px; height:18px; accent-color:var(--accent);">
+          <label for="res-lock" style="margin:0; font-weight:600; cursor:pointer;">Lock Aspect Ratio (Tasveer kheenchay gi nahi)</label>
+        </div>
+
+        <!-- Quick Dimension Presets -->
+        <div style="margin-top: 14px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+          <span style="font-size: 13px; color: var(--muted); font-weight: 600;">Aam Presets:</span>
+          <button type="button" class="btn btn-sm dim-preset" data-dim="1920x1080">Full HD (1920x1080)</button>
+          <button type="button" class="btn btn-sm dim-preset" data-dim="1280x720">HD (1280x720)</button>
+          <button type="button" class="btn btn-sm dim-preset" data-dim="600x600">Square (600x600)</button>
+          <button type="button" class="btn btn-sm dim-preset" data-dim="300x300">Passport (300x300)</button>
+        </div>
+
+        <div style="margin-top:14px;">
+          <label for="res-fmt">Output Format</label>
+          <select id="res-fmt">
+            <option value="image/jpeg">JPG / JPEG (Standard)</option>
+            <option value="image/png">PNG (Lossless)</option>
+            <option value="image/webp">WebP (Modern)</option>
+          </select>
+        </div>
+
+        <div id="res-prev-wrap" style="display:none; margin-top:16px; text-align:center;">
+          <img id="res-prev-img" alt="Preview" style="max-height:200px; max-width:100%; border-radius:8px; border:1px solid var(--line);">
+        </div>
+
+        <div class="button-bar">
+          <button type="button" class="btn btn-primary" id="res-go" style="flex: 1; padding: 12px;">Tasveer Resize Karein 📐</button>
+        </div>
+
+        <div class="res-box" id="res-out"></div>
+
+        <p class="note">
+          🔒 <b>100% In-Browser:</b> Aap ki tasveer kisi server par upload nahi hoti. Sab kuch aap ke device par process hota hai.
+        </p>
+      </div>
+
+      <!-- Ad Slot 1 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 1 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Under Tool)</span>
+      </div>
+
+      <!-- Explanation & FAQs -->
+      <section class="content-section">
+        <h2>Kaise Istemal Karein (How to Use)</h2>
+        <ol class="steps-list">
+          <li><b>Tasveer Muntakhib Karein:</b> Apne device se koi bhi tasveer select karein.</li>
+          <li><b>Dimensions Likhein:</b> Apni matlooba width aur height pixels mein darj karein ya presets chunein.</li>
+          <li><b>Format Chunein:</b> JPG, PNG ya WebP mein se output format select karein.</li>
+          <li><b>Resize & Download:</b> Button par click kar ke resized image foran download karein.</li>
+        </ol>
+
+        <h2>Image Resize Ki Mukammal Wazahat</h2>
+        <p>
+          Internet par form bharte waqt, social media profiles banate waqt ya website par photo lagate waqt aksar khas dimensions (maslan 600x600 pixels ya 1920x1080 pixels) mangi jati hain. Aam users ke paas Photoshop ya complex graphic software nahi hota jis se wo apni tasveer ka size pixel ke hisab se set kar sakein.
+        </p>
+        <p>
+          AshiKit Image Resize tool is mushkil ko foran aasan banata hai. Ye tool aap ke web browser ke canvas engine ko istemal karta hai jis se aap bina quality kharab kiye aur bina image ko stretch kiye naye dimensions mein dhaal sakte hain. Aspect ratio lock ka feature is baat ko yaqeeni banata hai ke tasveer ki natural proportion kharab na ho. Ye tool 100% safe hai kyunke photo aap ke phone se bahar nahi jati.
+        </p>
+
+        <h2>Ahem Sawalat (FAQs)</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3 class="faq-q">Lock Aspect Ratio ka kya faida hai?</h3>
+            <p class="faq-a">Aspect ratio lock hone se tasveer kheenchti (stretch) nahi hai balkay natural andaz mein resize hoti hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Passport size ya form ke liye dimensions kaise rakhein?</h3>
+            <p class="faq-a">Aam tor par online forms 300x300 ya 600x600 pixels mangte hain, aap khud type kar sakte hain.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Kya meri tasveer server par upload hoti hai?</h3>
+            <p class="faq-a">Hargiz nahi! Mukammal resize process aap ke device ke browser mein HTML5 canvas ke zariye hota hai.</p>
+          </div>
+          <div class="faq-item">
+            <h3 class="faq-q">Konsay format mein save kiya ja sakta hai?</h3>
+            <p class="faq-a">Aap JPG, PNG ya WebP format mein se koi bhi muntakhib kar sakte hain.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Tools -->
+      <section class="related-tools">
+        <h2 style="font-size:22px; font-weight:800; color:var(--ink);">Doosray Mutalliqah Tools</h2>
+        <div class="related-grid">
+          <a href="/image-compress/" class="related-card"><span class="related-icon">🖼️</span> Image Compress</a>
+          <a href="/shayari-card-maker/" class="related-card"><span class="related-icon">🎨</span> Shayari Card Maker</a>
+          <a href="/pdf-merge/" class="related-card"><span class="related-icon">📑</span> PDF Merge</a>
+          <a href="/qr-code-generator/" class="related-card"><span class="related-icon">📱</span> QR Code Generator</a>
+        </div>
+      </section>
+
+      <!-- Ad Slot 2 -->
+      <div class="ad-slot">
+        <!-- Google AdSense Unit 2 Code Yahan Aaye Ga -->
+        <span style="opacity:0.6;">Advertisement Space (Bottom)</span>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="/assets/site.js"></script>
+  <script src="/assets/tools/resize.js"></script>
+</body>
+</html>
