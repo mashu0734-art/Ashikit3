@@ -28,13 +28,18 @@
       const readTime = Math.ceil(words / 200) || 0;
       const speakTime = Math.ceil(words / 130) || 0;
 
-      $('stat-words').textContent = words.toLocaleString('en-PK');
-      $('stat-chars').textContent = charsWithSpaces.toLocaleString('en-PK');
-      $('stat-chars-nospace').textContent = charsWithoutSpaces.toLocaleString('en-PK');
-      $('stat-sentences').textContent = sentences.toLocaleString('en-PK');
-      $('stat-paras').textContent = paras.toLocaleString('en-PK');
-      $('stat-readtime').textContent = readTime + ' min';
-      $('stat-speaktime').textContent = speakTime + ' min';
+      const setEl = (id, val) => {
+        const el = $(id);
+        if (el) el.textContent = val;
+      };
+
+      setEl('stat-words', words.toLocaleString('en-PK'));
+      setEl('stat-chars', charsWithSpaces.toLocaleString('en-PK'));
+      setEl('stat-chars-nospace', charsWithoutSpaces.toLocaleString('en-PK'));
+      setEl('stat-sentences', sentences.toLocaleString('en-PK'));
+      setEl('stat-paras', paras.toLocaleString('en-PK'));
+      setEl('stat-readtime', readTime + ' min');
+      setEl('stat-speaktime', speakTime + ' min');
     }
 
     textInp.addEventListener('input', count);

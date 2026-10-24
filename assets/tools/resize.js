@@ -29,7 +29,9 @@
         origHeight = im.height;
         widthInp.value = origWidth;
         heightInp.value = origHeight;
-        $('res-orig-info').textContent = `Asal Size: ${origWidth}px x ${origHeight}px (${(f.size / 1024).toFixed(0)} KB)`;
+        if ($('res-orig-info')) {
+          $('res-orig-info').textContent = `Asal Size: ${origWidth}px x ${origHeight}px (${(f.size / 1024).toFixed(0)} KB)`;
+        }
         if (prevWrap && prevImg) {
           prevWrap.style.display = 'block';
           prevImg.src = im.src;
