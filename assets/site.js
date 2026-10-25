@@ -93,12 +93,12 @@ const CONFIG = {
           <div>
             <div class="mobile-cat-title">Text & Language</div>
             <div class="mobile-nav-grid">
+              <a href="/shayari-card-maker/" class="mobile-nav-item">🎨 Shayari Card</a>
+              <a href="/stylish-name-generator/" class="mobile-nav-item">✨ Stylish Names</a>
               <a href="/roman-urdu-to-urdu/" class="mobile-nav-item">✍️ Urdu Converter</a>
               <a href="/word-counter/" class="mobile-nav-item">📝 Word Counter</a>
               <a href="/text-case-converter/" class="mobile-nav-item">🔠 Text Case</a>
               <a href="/number-to-urdu-words/" class="mobile-nav-item">🔢 Number Words</a>
-              <a href="/stylish-name-generator/" class="mobile-nav-item">✨ Stylish Names</a>
-              <a href="/shayari-card-maker/" class="mobile-nav-item">🎨 Shayari Card</a>
             </div>
           </div>
 
@@ -165,12 +165,12 @@ const CONFIG = {
           <div class="footer-col">
             <h4>Text Tools</h4>
             <ul class="footer-links">
+              <li><a href="/shayari-card-maker/">Shayari Card Maker</a></li>
+              <li><a href="/stylish-name-generator/">Stylish Names</a></li>
               <li><a href="/roman-urdu-to-urdu/">Roman Urdu Converter</a></li>
               <li><a href="/word-counter/">Word Counter</a></li>
               <li><a href="/text-case-converter/">Text Case Converter</a></li>
               <li><a href="/number-to-urdu-words/">Urdu Number Words</a></li>
-              <li><a href="/stylish-name-generator/">Stylish Names</a></li>
-              <li><a href="/shayari-card-maker/">Shayari Card Maker</a></li>
             </ul>
           </div>
 
