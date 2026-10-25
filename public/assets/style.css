@@ -594,22 +594,159 @@ button.btn-sm, .btn.btn-sm {
   line-height: 1.5;
 }
 
-/* ==================== ZERO CLS AD SLOTS ==================== */
+/* ==================== ADSTERRA AD SLOTS & STYLING ==================== */
 .ad-slot {
-  margin: 36px auto;
+  margin: 28px auto;
   width: 100%;
   max-width: 900px;
-  min-height: 90px;
-  background: var(--panel-alt);
-  border: 1.5px dashed var(--line);
-  border-radius: var(--radius-md);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--muted);
-  font-size: 13px;
-  padding: 12px;
   box-sizing: border-box;
+}
+
+.ad-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+  opacity: 0.65;
+  user-select: none;
+}
+
+.ad-desktop-leaderboard {
+  display: none;
+  width: 728px;
+  min-height: 90px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.ad-mobile-leaderboard {
+  display: block;
+  width: 320px;
+  min-height: 50px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .ad-desktop-leaderboard {
+    display: block;
+  }
+  .ad-mobile-leaderboard {
+    display: none;
+  }
+}
+
+.ad-banner-468 {
+  display: block;
+  width: 468px;
+  max-width: 100%;
+  min-height: 60px;
+  text-align: center;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.ad-banner-300 {
+  display: block;
+  width: 300px;
+  min-height: 250px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.ad-banner-160x600 {
+  display: block;
+  width: 160px;
+  min-height: 600px;
+  text-align: center;
+}
+
+.ad-banner-160x300 {
+  display: block;
+  width: 160px;
+  min-height: 300px;
+  text-align: center;
+}
+
+.ad-showcase-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 32px 0;
+  padding: 24px 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+}
+
+.ad-showcase-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.native-ad-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 28px auto;
+  min-height: 100px;
+  background: var(--panel-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.smartlink-bar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 20px;
+  margin: 0 auto 18px;
+  max-width: 680px;
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.15) 0%, rgba(0, 200, 255, 0.08) 100%);
+  border: 1.5px solid rgba(0, 242, 254, 0.4);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 13.5px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 16px rgba(0, 242, 254, 0.15);
+}
+
+.smartlink-bar:hover {
+  border-color: var(--accent);
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.25) 0%, rgba(0, 200, 255, 0.18) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 242, 254, 0.35);
+  color: var(--ink);
+}
+
+.smartlink-nav-btn {
+  background: linear-gradient(135deg, #00F2FE 0%, #00C8FF 100%) !important;
+  color: #030712 !important;
+  font-weight: 800 !important;
+  border-radius: 20px !important;
+  padding: 6px 14px !important;
+  margin-left: 6px;
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.4);
+  text-decoration: none;
+}
+
+.smartlink-nav-btn:hover {
+  transform: scale(1.04);
 }
 
 /* ==================== HOME PAGE TOOLS GRID ==================== */

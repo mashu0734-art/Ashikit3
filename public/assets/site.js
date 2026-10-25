@@ -6,11 +6,31 @@
 const CONFIG = {
   BASE_URL: 'https://YOUR_DOMAIN.pages.dev',
   CONTACT_EMAIL: 'YOUR_EMAIL@example.com',
-  SITE_NAME: 'AshiKit'
+  SITE_NAME: 'AshiKit',
+  SMARTLINK_URL: 'https://arwf.org/4/a14a03fcdab30a14ef541ee82726e2bd'
 };
 
 (function () {
   'use strict';
+
+  // Global Adsterra Background Scripts (Social Bar & Popunder)
+  function initGlobalAds() {
+    try {
+      if (!document.querySelector('script[src*="534d0f3d2a985421f5c4c40290f8aff6"]')) {
+        const sb = document.createElement('script');
+        sb.setAttribute('data-cfasync', 'false');
+        sb.src = 'https://bicea.org/14/534d0f3d2a985421f5c4c40290f8aff6';
+        document.head.appendChild(sb);
+      }
+      if (!document.querySelector('script[src*="39b2c04d029b2a2b16558d0e6eb35e23"]')) {
+        const pu = document.createElement('script');
+        pu.setAttribute('data-cfasync', 'false');
+        pu.src = 'https://afders.org/1/39b2c04d029b2a2b16558d0e6eb35e23';
+        document.head.appendChild(pu);
+      }
+    } catch (_) {}
+  }
+  initGlobalAds();
 
   // 1. Theme Management
   const THEME_KEY = 'ashikit-theme';
@@ -70,13 +90,14 @@ const CONFIG = {
 
         <nav class="nav-desktop">
           <a href="/" class="nav-link" data-path="/">Home</a>
+          <a href="/shayari-card-maker/" class="nav-link" data-path="/shayari-card-maker/">Shayari Card</a>
           <a href="/roman-urdu-to-urdu/" class="nav-link" data-path="/roman-urdu-to-urdu/">Converter</a>
           <a href="/zakat-calculator/" class="nav-link" data-path="/zakat-calculator/">Zakat</a>
           <a href="/emi-calculator/" class="nav-link" data-path="/emi-calculator/">EMI</a>
           <a href="/cv-maker/" class="nav-link" data-path="/cv-maker/">CV Maker</a>
-          <a href="/pdf-merge/" class="nav-link" data-path="/pdf-merge/">PDF Merge</a>
           <a href="/image-compress/" class="nav-link" data-path="/image-compress/">Compress</a>
-          <a href="/blog/" class="nav-link" data-path="/blog/">Blog & Guides</a>
+          <a href="/blog/" class="nav-link" data-path="/blog/">Blog</a>
+          <a href="${CONFIG.SMARTLINK_URL}" target="_blank" rel="noopener nofollow" class="smartlink-nav-btn">🔥 Khas Offer</a>
         </nav>
 
         <div class="header-actions">
@@ -90,6 +111,13 @@ const CONFIG = {
       <!-- Mobile Navigation Drawer -->
       <div class="mobile-nav" id="mobile-nav">
         <div class="mobile-nav-categories">
+          <div>
+            <div class="mobile-cat-title">Featured & Offers</div>
+            <div class="mobile-nav-grid">
+              <a href="${CONFIG.SMARTLINK_URL}" target="_blank" rel="noopener nofollow" class="mobile-nav-item" style="border-color:var(--accent); background:rgba(0,242,254,0.12); color:var(--accent); font-weight:700;">🔥 Khas Partner Deals</a>
+            </div>
+          </div>
+
           <div>
             <div class="mobile-cat-title">Text & Language</div>
             <div class="mobile-nav-grid">
@@ -197,6 +225,8 @@ const CONFIG = {
 
         <div class="footer-bottom">
           <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-bottom:12px;font-size:13.5px;">
+            <a href="${CONFIG.SMARTLINK_URL}" target="_blank" rel="noopener nofollow" style="color:var(--accent);font-weight:700;text-decoration:none;">🔥 Khas Partner Deals</a>
+            <span style="color:var(--line);">•</span>
             <a href="/blog/" style="color:var(--muted);text-decoration:none;">📚 Blog & Guides</a>
             <span style="color:var(--line);">•</span>
             <a href="/about/" style="color:var(--muted);text-decoration:none;">ℹ️ About Us</a>
